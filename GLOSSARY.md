@@ -44,10 +44,12 @@ The placement of a receipt, or a share of it, on one cost object with one cost k
 _Avoid_: Allocation, assignment
 
 **Cost center**:
-The person who answers for a cost. Every posting has exactly one.
+A node of the team tree that collects cost: a person, a team, a department or the organization. Every posting lands on exactly one person, the agent manager of the agent that spent it, and rolls up from there.
+_Avoid_: Who, person side
 
 **Cost object**:
-The work a cost paid for: a ticket, a project or the organization.
+The work a cost paid for: a ticket, a project or the organization. Ticket cost rolls up to its parent ticket and its project.
+_Avoid_: What, work side
 
 **Cost kind**:
 The label on a posting that says how it relates to work: direct, project overhead, organization overhead, personal or unattributed.
