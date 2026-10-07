@@ -1,6 +1,6 @@
 # Token Controller
 
-Cost accounting and management control for AI agents: receipts from agents are matched to provider statements, placed on the work that caused them, and compared with budgets.
+Cost accounting and management control for AI agents: receipts from agents are matched to provider bills, placed on the work that caused them, and compared with budgets.
 
 ## Language
 
@@ -10,9 +10,9 @@ Cost accounting and management control for AI agents: receipts from agents are m
 One agent session's account of what it spent and on what work: tokens, cost, model, time range and a one-line summary.
 _Avoid_: Report item, line item, usage record
 
-**Statement**:
+**Bill**:
 A provider's figure for one period: gross, discount, credit and net. It is the total the receipts must add up to.
-_Avoid_: Bill, invoice
+_Avoid_: Statement, invoice
 
 **Provider**:
 A company that charges for model usage, such as Anthropic, OpenAI or a cloud marketplace.
@@ -22,11 +22,11 @@ _Avoid_: Vendor
 One way a provider charges an organization: subscription, seat, usage at API rates, API key, cloud marketplace or reseller.
 
 **Reconciliation**:
-Checking, per period, that postings plus unattributed plus residual equal the statement.
+Checking, per period, that postings plus unattributed plus residual equal the bill.
 _Avoid_: Matching
 
 **Residual**:
-The part of a statement that no receipt explains. Always shown as its own line.
+The part of a bill that no receipt explains. Always shown as its own line.
 _Avoid_: Leftover, difference
 
 ### Where cost sits
@@ -170,7 +170,7 @@ A receipt's cost at the provider's published prices.
 _Avoid_: Estimated cost
 
 **Billed value**:
-A receipt's cost as the provider actually charged it, where a statement or billed telemetry says so.
+A receipt's cost as the provider actually charged it, where a bill or billed telemetry says so.
 _Avoid_: Actual cost
 
 **Price table**:
@@ -216,7 +216,7 @@ _Avoid_: Anomaly
 
 ## Words with two meanings
 
-- **Statement** also names the locked monthly document a manager hands to finance.
+- The locked monthly document a manager hands to finance has no settled name.
 - **Owner** also names the person who answers for an agent, and the person a ticket is assigned to.
 - **Report** names both sending in receipts ("your report is late") and a view managers read ("budget versus actual").
 - **Client** appears as a level above project and as a kind of project.
