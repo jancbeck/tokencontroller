@@ -93,7 +93,7 @@ _Avoid_: Issue, task, story, work item
 
 **Person**:
 A human in the organization. A person belongs to one team at a time.
-_Avoid_: User, seat, developer
+_Avoid_: User, developer
 
 **Team**:
 A node in the team tree: a team, a department or the whole organization.
@@ -104,18 +104,20 @@ The organization's people arranged as person, team, department, organization.
 _Avoid_: Org chart, hierarchy
 
 **Member**:
-The role that sends in receipts and sees its own.
+Anyone in the organization, whatever their role.
+_Avoid_: User, seat
 
-**Manager**:
-The role that reads reports, sets budgets and cadence, and rejects receipts, for the teams, projects or clients it is assigned.
+**Agent manager**:
+The role that manages agents: sends token sheets and sees its own cost. Every agent has exactly one agent manager, who answers for its cost.
+_Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
+
+**People manager**:
+The role that manages people and projects: reads reports, sets budgets and cadence, and rejects receipts, for the teams, projects or clients it is assigned. A people manager is also an agent manager.
+_Avoid_: Manager
 
 **Controller**:
 The role that sees everything, runs the close and posts adjustments.
 _Avoid_: Owner, admin
-
-**Supervisor**:
-The one person who answers for an agent's cost, the way a manager answers for an employee.
-_Avoid_: Owner, operator
 
 **Assignee**:
 The person a ticket is assigned to.
@@ -124,7 +126,7 @@ _Avoid_: Ticket owner
 ### Agents
 
 **Agent**:
-An identity that spends tokens and sends receipts: a developer's local agent, a CI automation or a remote agent. It has exactly one supervisor.
+An identity that spends tokens and sends receipts: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
 _Avoid_: Bot, tool
 
 **Agent type**:
@@ -166,7 +168,7 @@ _Avoid_: Filter, mapping
 An optional program on the developer's machine that picks among candidate tickets when rules cannot.
 
 **Report**:
-A view managers read, such as budget versus actual per project.
+A view people managers read, such as budget versus actual per project.
 _Avoid_: Dashboard
 
 **Review**:
@@ -177,11 +179,11 @@ Sending receipts from a machine to the organization.
 _Avoid_: Sync, upload, submit
 
 **Reject**:
-A manager sending a receipt back to its person with a reason.
+A people manager sending a receipt back to its agent manager with a reason.
 _Avoid_: Decline, return
 
 **Cadence**:
-How often a manager requires token sheets: weekly, every two weeks, monthly or custom.
+How often a people manager requires token sheets: weekly, every two weeks, monthly or custom.
 _Avoid_: Reporting cadence, schedule
 
 ### Money
@@ -238,6 +240,5 @@ _Avoid_: Anomaly
 ## Words with two meanings
 
 - **Client** appears as a level above project and as a kind of project.
-- **Member** names both a role and anyone counted towards the plan's 150.
 - **Team** and **Enterprise** are also plan names, here and at Anthropic.
 - **Forecast** is used next to budget without its own meaning.
