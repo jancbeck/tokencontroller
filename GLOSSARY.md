@@ -14,6 +14,14 @@ _Avoid_: Report item, line item, usage record
 A provider's figure for one period: gross, discount, credit and net. It is the total the receipts must add up to.
 _Avoid_: Statement, invoice
 
+**Token sheet**:
+One person's receipts for a stretch of time, sent in together, the way a timesheet holds hours.
+_Avoid_: Report, submission
+
+**Cost sheet**:
+The locked account of one closed period for the whole organization: cost per client, project and ticket, adding up to the bill.
+_Avoid_: Statement, close sheet, monthly report
+
 **Provider**:
 A company that charges for model usage, such as Anthropic, OpenAI or a cloud marketplace.
 _Avoid_: Vendor
@@ -99,7 +107,7 @@ _Avoid_: Org chart, hierarchy
 The role that sends in receipts and sees its own.
 
 **Manager**:
-The role that reads reports, sets budgets and reporting cadence, and rejects receipts, for the teams, projects or clients it is assigned.
+The role that reads reports, sets budgets and cadence, and rejects receipts, for the teams, projects or clients it is assigned.
 
 **Owner**:
 The role that sees everything, runs the close and posts adjustments.
@@ -149,6 +157,10 @@ _Avoid_: Filter, mapping
 **Classifier**:
 An optional program on the developer's machine that picks among candidate tickets when rules cannot.
 
+**Report**:
+A view managers read, such as budget versus actual per project.
+_Avoid_: Dashboard
+
 **Review**:
 A person checking their own draft receipts before pushing them.
 
@@ -160,8 +172,9 @@ _Avoid_: Sync, upload, submit
 A manager sending a receipt back to its person with a reason.
 _Avoid_: Decline, return
 
-**Reporting cadence**:
-How often a manager requires receipts to be pushed.
+**Cadence**:
+How often a manager requires token sheets: weekly, every two weeks, monthly or custom.
+_Avoid_: Reporting cadence, schedule
 
 ### Money
 
@@ -186,7 +199,7 @@ One calendar month, open or closed.
 _Avoid_: Billing cycle
 
 **Close**:
-Locking a period so its receipts and postings can no longer change.
+Locking a period so its receipts and postings can no longer change. It produces the cost sheet.
 _Avoid_: Month-end, lock
 
 **Adjustment**:
@@ -216,9 +229,7 @@ _Avoid_: Anomaly
 
 ## Words with two meanings
 
-- The locked monthly document a manager hands to finance has no settled name.
 - **Owner** also names the person who answers for an agent, and the person a ticket is assigned to.
-- **Report** names both sending in receipts ("your report is late") and a view managers read ("budget versus actual").
 - **Client** appears as a level above project and as a kind of project.
 - **Member** names both a role and anyone counted towards the plan's 150.
 - **Team** and **Enterprise** are also plan names, here and at Anthropic.
