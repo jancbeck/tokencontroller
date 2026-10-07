@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && { [ -e .claude/skills/tdd ] || npx -y skills@latest add mattpocock/skills -a claude-code -y --skill $(node -p \"Object.keys(require('./skills-lock.json').skills).join(' ')\") >/dev/null 2>&1; }",
+            "timeout": 180
+          }
+        ]
+      }
+    ]
+  }
+}

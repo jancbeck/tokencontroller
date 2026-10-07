@@ -1,0 +1,7 @@
+.DS_Store
+
+# Wrangler local cache (holds account info)
+.wrangler/
+
+# Skills are installed at session start from skills-lock.json
+.claude/skills
