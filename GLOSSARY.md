@@ -26,6 +26,10 @@ _Avoid_: Live
 The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill. With approval on, it holds approved cost only.
 _Avoid_: Statement, close sheet, monthly report
 
+**Pass-through**:
+An organization charging a client for the cost on its cost sheet. Token Controller ends at the cost sheet; what the client is invoiced is outside it.
+_Avoid_: Chargeback, rebilling, invoicing
+
 **Provider**:
 A company that charges for model usage, such as Anthropic, OpenAI or a cloud marketplace.
 _Avoid_: Vendor
@@ -226,7 +230,10 @@ A model missing from the price table. Its cost is labelled, never shown as zero.
 
 **Period**:
 One calendar month, open or closed.
-_Avoid_: Billing cycle
+_Avoid_: Billing cycle, month
+
+**Cadence period**:
+One stretch of the cadence, such as one week. Each has one token sheet per agent manager.
 
 **Close**:
 Locking a period so its token entries and postings can no longer change. It produces the cost sheet.
