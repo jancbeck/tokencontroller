@@ -109,14 +109,22 @@ The role that sends in receipts and sees its own.
 **Manager**:
 The role that reads reports, sets budgets and cadence, and rejects receipts, for the teams, projects or clients it is assigned.
 
-**Owner**:
+**Controller**:
 The role that sees everything, runs the close and posts adjustments.
-_Avoid_: Admin
+_Avoid_: Owner, admin
+
+**Supervisor**:
+The one person who answers for an agent's cost, the way a manager answers for an employee.
+_Avoid_: Owner, operator
+
+**Assignee**:
+The person a ticket is assigned to.
+_Avoid_: Ticket owner
 
 ### Agents
 
 **Agent**:
-An identity that spends tokens and sends receipts: a developer's local agent, a CI automation or a remote agent. It has exactly one person who answers for it.
+An identity that spends tokens and sends receipts: a developer's local agent, a CI automation or a remote agent. It has exactly one supervisor.
 _Avoid_: Bot, tool
 
 **Agent type**:
@@ -203,7 +211,7 @@ Locking a period so its receipts and postings can no longer change. It produces 
 _Avoid_: Month-end, lock
 
 **Adjustment**:
-A signed correction an owner posts to a closed period.
+A signed correction a controller posts to a closed period.
 
 ### Management control
 
@@ -229,7 +237,6 @@ _Avoid_: Anomaly
 
 ## Words with two meanings
 
-- **Owner** also names the person who answers for an agent, and the person a ticket is assigned to.
 - **Client** appears as a level above project and as a kind of project.
 - **Member** names both a role and anyone counted towards the plan's 150.
 - **Team** and **Enterprise** are also plan names, here and at Anthropic.
