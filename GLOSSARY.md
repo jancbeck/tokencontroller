@@ -19,7 +19,7 @@ One person's receipts for a stretch of time, sent in together, the way a timeshe
 _Avoid_: Report, submission
 
 **Cost sheet**:
-The locked account of one closed period for the whole organization: cost per client, project and ticket, adding up to the bill.
+The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill.
 _Avoid_: Statement, close sheet, monthly report
 
 **Provider**:
@@ -80,10 +80,14 @@ The attribution an organization aims for.
 
 **Organization**:
 One customer of Token Controller: its people, teams, projects and periods.
-_Avoid_: Account, tenant, workspace, company
+_Avoid_: Account, tenant, workspace, company, client
 
 **Project**:
-A body of work for one client or one product, made of tickets.
+A body of work made of tickets.
+
+**Client**:
+A label on a project that names who the work is for. Projects with the same client can be totalled.
+_Avoid_: Customer, account
 
 **Ticket**:
 Any unit of work: a feature, a story, an epic or a bug. Tickets can sit inside other tickets.
@@ -112,7 +116,7 @@ The role that manages agents: sends token sheets and sees its own cost. Every ag
 _Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
 
 **People manager**:
-The role that manages people and projects: reads reports, sets budgets and cadence, and rejects receipts, for the teams, projects or clients it is assigned. A people manager is also an agent manager.
+The role that manages people and projects: reads reports, sets budgets and cadence, and rejects receipts, for the teams or projects it is assigned. A people manager is also an agent manager.
 _Avoid_: Manager
 
 **Controller**:
@@ -239,6 +243,5 @@ _Avoid_: Anomaly
 
 ## Words with two meanings
 
-- **Client** appears as a level above project and as a kind of project.
 - **Team** and **Enterprise** are also plan names, here and at Anthropic.
 - **Forecast** is used next to budget without its own meaning.
