@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && { [ -e .claude/skills/tdd ] || npx -y skills@latest add mattpocock/skills -a claude-code -y --skill $(node -p \"Object.keys(require('./skills-lock.json').skills).join(' ')\") >/dev/null 2>&1; }",
+            "command": "cd \"$(node -p \"JSON.parse(require('fs').readFileSync(0,'utf8')).cwd\" 2>/dev/null || echo \"$CLAUDE_PROJECT_DIR\")\" && cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && { [ -e .claude/skills/tdd ] || npx -y skills@latest add mattpocock/skills -a claude-code -y --skill $(node -p \"Object.keys(require('./skills-lock.json').skills).join(' ')\") >/dev/null 2>&1; }",
             "timeout": 180
           }
         ]
