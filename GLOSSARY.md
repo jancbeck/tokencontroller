@@ -1,25 +1,25 @@
 # Token Controller
 
-Cost accounting and management control for AI agents: receipts from agents are matched to provider bills, placed on the work that caused them, and compared with token budgets.
+Cost accounting and management control for AI agents: token entries from agents are matched to provider bills, placed on the work that caused them, and compared with token budgets.
 
 ## Language
 
 ### The two sides
 
-**Receipt**:
-One agent session's account of what it spent and on what work: tokens, cost, model, time range and a one-line summary.
-_Avoid_: Report item, line item, usage record
+**Token entry**:
+One agent session's account of what it spent and on what work: tokens, cost, model, time range and a one-line summary. It is to a token sheet what a time entry is to a timesheet.
+_Avoid_: Receipt, report item, line item, usage record, voucher
 
 **Bill**:
-A provider's figure for one period: gross, discount, credit and net. It is the total the receipts must add up to.
+A provider's figure for one period: gross, discount, credit and net. It is the total the token entries must add up to.
 _Avoid_: Statement, invoice
 
 **Token sheet**:
-One person's receipts for a stretch of time, sent in together, the way a timesheet holds hours.
+One person's token entries for a stretch of time, sent in together, the way a timesheet holds hours.
 _Avoid_: Report, submission
 
 **Cost sheet**:
-The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill.
+The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill. With approval on, it holds approved cost only.
 _Avoid_: Statement, close sheet, monthly report
 
 **Provider**:
@@ -34,13 +34,13 @@ Checking, per period, that postings plus unattributed plus residual equal the bi
 _Avoid_: Matching
 
 **Residual**:
-The part of a bill that no receipt explains. Always shown as its own line.
+The part of a bill that no token entry explains. Always shown as its own line.
 _Avoid_: Leftover, difference
 
 ### Where cost sits
 
 **Posting**:
-The placement of a receipt, or a share of it, on one cost object with one cost kind.
+The placement of a token entry, or a share of it, on one cost object with one cost kind.
 _Avoid_: Allocation, assignment
 
 **Cost center**:
@@ -118,7 +118,7 @@ The role that manages agents: sends token sheets and sees its own cost. Every ag
 _Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
 
 **People manager**:
-The role that manages people and projects: reads reports, sets token budgets and cadence, and rejects receipts, for the teams or projects it is assigned. A people manager is also an agent manager.
+The role that manages people and projects: reads reports, sets token budgets and cadence, and approves or rejects token entries, for the teams or projects it is assigned. A people manager is also an agent manager.
 _Avoid_: Manager
 
 **Controller**:
@@ -132,7 +132,7 @@ _Avoid_: Ticket owner
 ### Agents
 
 **Agent**:
-An identity that spends tokens and sends receipts: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
+An identity that spends tokens and sends token entries: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
 _Avoid_: Bot, tool
 
 **Agent type**:
@@ -152,16 +152,16 @@ A stretch of a session on one branch and one working directory.
 The full text of a session. It never leaves the machine.
 
 **Summary**:
-The one line an agent writes about what a session did. It is the only text in a receipt.
+The one line an agent writes about what a session did. It is the only text in a token entry.
 
 **Telemetry event**:
 One model call as reported live by the agent: tokens, cost and IDs, no text.
 
 **Door**:
-A way receipts or telemetry reach Token Controller: session files, telemetry push, the GitHub Action or the receipts endpoint.
+A way token entries or telemetry reach Token Controller: session files, telemetry push, the GitHub Action or the token entries endpoint.
 _Avoid_: Integration, connector
 
-### Placing receipts
+### Placing token entries
 
 **Signal**:
 A fact about a session that hints at its cost object: branch, working directory, repository, pull request, or a ticket key in a prompt.
@@ -178,14 +178,21 @@ A view people managers read, such as token budget versus actual per project.
 _Avoid_: Dashboard
 
 **Review**:
-A person checking their own draft receipts before pushing them.
+A person checking their own draft token entries before pushing them.
 
 **Push**:
-Sending receipts from a machine to the organization.
+Sending token entries from a machine to the organization.
 _Avoid_: Sync, upload, submit
 
+**Approval**:
+A people manager accepting pushed token entries. An organization can switch approval off. With approval on, a period cannot be closed while a token entry in it is unapproved.
+_Avoid_: Sign-off, posted
+
+**Status**:
+Where a token entry stands: draft (still on the machine), pushed (counts in reports), approved, rejected (does not count until fixed) or locked (its period is closed).
+
 **Reject**:
-A people manager sending a receipt back to its agent manager with a reason.
+A people manager sending a token entry back to its agent manager with a reason.
 _Avoid_: Decline, return
 
 **Cadence**:
@@ -195,11 +202,11 @@ _Avoid_: Reporting cadence, schedule
 ### Money
 
 **List value**:
-A receipt's cost at the provider's published prices.
+A token entry's cost at the provider's published prices.
 _Avoid_: Estimated cost
 
 **Billed value**:
-A receipt's cost as the provider actually charged it, where a bill or billed telemetry says so.
+A token entry's cost as the provider actually charged it, where a bill or billed telemetry says so.
 _Avoid_: Actual cost
 
 **Price table**:
@@ -215,7 +222,7 @@ One calendar month, open or closed.
 _Avoid_: Billing cycle
 
 **Close**:
-Locking a period so its receipts and postings can no longer change. It produces the cost sheet.
+Locking a period so its token entries and postings can no longer change. It produces the cost sheet.
 _Avoid_: Month-end, lock
 
 **Adjustment**:
