@@ -1,6 +1,6 @@
 # Token Controller
 
-Cost accounting and management control for AI agents: receipts from agents are matched to provider bills, placed on the work that caused them, and compared with budgets.
+Cost accounting and management control for AI agents: receipts from agents are matched to provider bills, placed on the work that caused them, and compared with token budgets.
 
 ## Language
 
@@ -116,7 +116,7 @@ The role that manages agents: sends token sheets and sees its own cost. Every ag
 _Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
 
 **People manager**:
-The role that manages people and projects: reads reports, sets budgets and cadence, and rejects receipts, for the teams or projects it is assigned. A people manager is also an agent manager.
+The role that manages people and projects: reads reports, sets token budgets and cadence, and rejects receipts, for the teams or projects it is assigned. A people manager is also an agent manager.
 _Avoid_: Manager
 
 **Controller**:
@@ -172,7 +172,7 @@ _Avoid_: Filter, mapping
 An optional program on the developer's machine that picks among candidate tickets when rules cannot.
 
 **Report**:
-A view people managers read, such as budget versus actual per project.
+A view people managers read, such as token budget versus actual per project.
 _Avoid_: Dashboard
 
 **Review**:
@@ -221,21 +221,22 @@ A signed correction a controller posts to a closed period.
 
 ### Management control
 
-**Budget**:
-A planned figure for a person, a ticket, a project or a period.
-_Avoid_: Limit, cap, allowance
+**Token budget**:
+Money a human has planned for a person, a ticket, a project or a period. It is compared with actual cost and never stops spending.
+_Avoid_: Budget, limit, cap, allowance
 
-**Estimate**:
-The size of a ticket as recorded in the ticket system.
+**Token forecast**:
+Money Token Controller predicts for a ticket, a project or a period from past cost. It becomes a token budget only when a person accepts it.
+_Avoid_: Forecast, estimate, prediction
 
 **Actual**:
-What was spent against a budget.
+What was spent against a token budget.
 
 **Overrun**:
-Actual above budget.
+Actual above token budget.
 
 **Underrun**:
-Actual below budget.
+Actual below token budget.
 
 **Outlier**:
 A cost far from the organization's own baseline for similar work.
@@ -243,5 +244,4 @@ _Avoid_: Anomaly
 
 ## Words with two meanings
 
-- **Team** and **Enterprise** are also plan names, here and at Anthropic.
-- **Forecast** is used next to budget without its own meaning.
+- **Team** and **Enterprise** are also plan names, here and at Anthropic. A plan is always written with the word: Team plan, Enterprise plan.
