@@ -15,8 +15,12 @@ A provider's figure for one period: gross, discount, credit and net. It is the t
 _Avoid_: Statement, invoice
 
 **Token sheet**:
-One person's token entries for a stretch of time, sent in together, the way a timesheet holds hours.
-_Avoid_: Report, submission
+One agent manager's token entries for one cadence period that were not reported automatically. It is the only way usage that exists on a person's machine reaches the organization.
+_Avoid_: Report, batch
+
+**Automatic**:
+Said of a token entry the agent reports itself, with no person involved: cloud agents, CI agents, support agents. Automatic token entries are never on a token sheet.
+_Avoid_: Live
 
 **Cost sheet**:
 The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill. With approval on, it holds approved cost only.
@@ -114,7 +118,7 @@ Anyone in the organization, whatever their role.
 _Avoid_: User, seat
 
 **Agent manager**:
-The role that manages agents: sends token sheets and sees its own cost. Every agent has exactly one agent manager, who answers for its cost.
+The role that manages agents: submits token sheets and sees its own cost. Every agent has exactly one agent manager, who answers for its cost.
 _Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
 
 **People manager**:
@@ -132,7 +136,7 @@ _Avoid_: Ticket owner
 ### Agents
 
 **Agent**:
-An identity that spends tokens and sends token entries: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
+An identity that spends tokens and produces token entries: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
 _Avoid_: Bot, tool
 
 **Agent type**:
@@ -178,25 +182,28 @@ A view people managers read, such as token budget versus actual per project.
 _Avoid_: Dashboard
 
 **Review**:
-A person checking their own draft token entries before pushing them.
+An agent manager checking their own draft token entries before submitting the token sheet.
 
-**Push**:
-Sending token entries from a machine to the organization.
-_Avoid_: Sync, upload, submit
+**Submit**:
+Handing in a token sheet for its cadence period.
+_Avoid_: Push, sync, upload
+
+**Late**:
+Said of a token sheet whose cadence period is over and that has not been submitted.
 
 **Approval**:
-A people manager accepting pushed token entries. An organization can switch approval off. With approval on, a period cannot be closed while a token entry in it is unapproved.
+A people manager accepting submitted token entries. An organization can switch approval off. With approval on, a period cannot be closed while a token entry in it is unapproved.
 _Avoid_: Sign-off, posted
 
 **Status**:
-Where a token entry stands: draft (still on the machine), pushed (counts in reports), approved, rejected (does not count until fixed) or locked (its period is closed).
+Where a token entry stands: draft (still on the machine), submitted (counts in reports), approved, rejected (does not count until fixed) or locked (its period is closed). Automatic token entries start at submitted.
 
 **Reject**:
 A people manager sending a token entry back to its agent manager with a reason.
 _Avoid_: Decline, return
 
 **Cadence**:
-How often a people manager requires token sheets: weekly, every two weeks, monthly or custom.
+The rhythm in which token sheets are due, set by a people manager: weekly, every two weeks, monthly or custom.
 _Avoid_: Reporting cadence, schedule
 
 ### Money
