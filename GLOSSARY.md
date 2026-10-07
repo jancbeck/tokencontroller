@@ -52,7 +52,7 @@ The placement of a token entry, or a share of it, on one cost object with one co
 _Avoid_: Allocation, assignment
 
 **Cost center**:
-A node of the team tree that collects cost: a person, a team, a department or the organization. Every posting lands on exactly one person, the agent manager of the agent that spent it, and rolls up from there.
+A node of the team tree that collects cost: a person, a team, a department or the organization. Every posting lands on exactly one person, its agent manager, and rolls up from there.
 _Avoid_: Who, person side
 
 **Cost object**:
@@ -122,7 +122,7 @@ Anyone in the organization, whatever their role.
 _Avoid_: User, seat
 
 **Agent manager**:
-The role that manages agents: submits token sheets and sees its own cost. Every agent has exactly one agent manager, who answers for its cost.
+The role that manages agents: submits token sheets and sees its own cost. Every token entry has exactly one agent manager, who answers for its cost.
 _Avoid_: Member, supervisor, owner, orchestrator, prompter, developer
 
 **People manager**:
@@ -140,11 +140,17 @@ _Avoid_: Ticket owner
 ### Agents
 
 **Agent**:
-An identity that spends tokens and produces token entries: a developer's local agent, a CI automation or a remote agent. It has exactly one agent manager.
+Anything that calls a model and so costs money. Token Controller keeps no record of agents, only of the cost they cause: every token entry comes from exactly one agent session.
 _Avoid_: Bot, tool
 
 **Agent type**:
-The product an agent runs on, such as Claude Code or Codex.
+The product an agent ran on, such as Claude Code or Codex, carried on every token entry.
+
+**Agent name**:
+An optional label on a token entry that says which agent produced it, such as "review bot". Token entries with the same agent name can be totalled.
+
+**Model**:
+The model that did the work in a token entry. Together with the provider it decides the price.
 
 **Subagent**:
 An agent started by another agent inside the same session.
@@ -212,8 +218,11 @@ _Avoid_: Reporting cadence, schedule
 
 ### Money
 
+**Reported cost**:
+The cost figure an agent supplies with its own token entry. It is optional.
+
 **List value**:
-A token entry's cost at the provider's published prices.
+A token entry's cost at the provider's published prices: the reported cost where there is one, otherwise token counts times the price table for the model.
 _Avoid_: Estimated cost
 
 **Billed value**:
@@ -265,6 +274,7 @@ Actual below token budget.
 A cost far from the organization's own baseline for similar work.
 _Avoid_: Anomaly
 
-## Words with two meanings
+### Plans
 
-- **Team** and **Enterprise** are also plan names, here and at Anthropic. A plan is always written with the word: Team plan, Enterprise plan.
+**Team plan**, **Enterprise plan**:
+Always written with the word "plan", because team is a node of the team tree and both are also plan names at providers.
