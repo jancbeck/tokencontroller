@@ -143,7 +143,7 @@ _Avoid_: Ticket owner
 Anything that calls a model and so costs money. Token Controller keeps no record of agents, only of the cost they cause: every token entry comes from exactly one agent session.
 _Avoid_: Bot, tool
 
-**Agent type**:
+**Agent harness**:
 The product an agent ran on, such as Claude Code or Codex, carried on every token entry.
 
 **Agent name**:
