@@ -10,5 +10,7 @@
   },
   "routes": [
     { "pattern": "docs.tokencontroller.com", "custom_domain": true }
-  ]
+  ],
+  // Every pull request gets its own Preview URL; Previews need this block even when empty.
+  "previews": {}
 }
