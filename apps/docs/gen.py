@@ -27,7 +27,7 @@ main=f'''  <main class="main">
 {body[lead_end:]}
 
     <div class="foot">
-      <span>Last updated 8 October 2026 · <a href="https://github.com/jancbeck/tokencontroller/blob/main/apps/docs/{bodyf}">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/blob/main/apps/docs/{bodyf}">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="https://tokencontroller.com/privacy">Privacy</a> · <a href="https://tokencontroller.com/imprint">Imprint</a></span>
     </div>
   </main>
