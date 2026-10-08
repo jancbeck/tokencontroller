@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open source and licenses — Token Controller Docs</title>
-<meta name="description" content="Licenses for the service and the local tools, how issues work, and the projects Token Controller builds on.">
-<link rel="canonical" href="https://tokencontroller.com/docs/reference/open-source">
+<title>Security and privacy — Token Controller Docs</title>
+<meta name="description" content="What leaves a person's machine, what a token entry contains, and who can see it.">
+<link rel="canonical" href="https://tokencontroller.com/docs/security">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,17 +199,17 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/reference/bill">Bill schema</a></li>
       <li><a href="/docs/reference/data-model">Data model</a></li>
       <li><a href="/docs/reference/pricing-tables">Price tables</a></li>
-      <li><a class="cur" href="/docs/reference/open-source">Open source and licenses</a></li>
-      <li><a href="/docs/security">Security and privacy</a></li>
+      <li><a href="/docs/reference/open-source">Open source and licenses</a></li>
+      <li><a class="cur" href="/docs/security">Security and privacy</a></li>
       <li><a href="/docs/faq">FAQ</a></li>
       <li><a href="/docs/glossary">Glossary</a></li>
     </ul></div>
   </aside>
 
   <main class="main">
-    <div class="crumb"><a href="/docs">Docs</a> / Reference / Open source and licenses</div>
-    <h1>Open source and licenses</h1>
-    <p class="lead">Token Controller is open source. The code lives in one public GitHub repository.</p>
+    <div class="crumb"><a href="/docs">Docs</a> / Reference / Security and privacy</div>
+    <h1>Security and privacy</h1>
+    <p class="lead">What leaves a person's machine, what Token Controller stores, and who can see it.</p>
 
     <details class="mside"><summary>Browse the docs</summary><div class="side">
       <div class="grp"><h4>Getting started</h4><ul><li><a href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a href="/docs/plans">Plans and limits</a></li><li><a href="/docs/scope">Scope</a></li></ul></div>
@@ -222,37 +222,44 @@ td:first-child{font-weight:600;white-space:nowrap}
     </div></details>
 
 
-    <h2 id="licenses">Licenses</h2>
+    <h2 id="never">What never leaves the machine</h2>
+    <p>Transcripts, prompts, tool output and file contents. Nothing in Token Controller reads them off the machine, and no door accepts them.</p>
+
+    <h2 id="token-entry">What a token entry contains</h2>
+    <p>This is the full list. The one-line summary is the only text, and the agent writes it.</p>
     <table>
-      <thead><tr><th>Part</th><th>License</th></tr></thead>
+      <thead><tr><th>Field</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td>The service</td><td>AGPL-3.0. If you run a changed version for others, you share your changes.</td></tr>
-        <tr><td>CLI, Claude Code mod, GitHub Action, SDK</td><td>MIT. Use them in anything, including closed tools.</td></tr>
+        <tr><td>Agent harness, model</td><td>claude-code, opus-5</td></tr>
+        <tr><td>Agent name</td><td>review bot (optional)</td></tr>
+        <tr><td>Agent manager</td><td>m.ortner@kestrel.example</td></tr>
+        <tr><td>Time range</td><td>09:12 to 11:40 UTC</td></tr>
+        <tr><td>Tokens by kind</td><td>input, output, cache write, cache read</td></tr>
+        <tr><td>Reported cost</td><td>the agent's own cost figure, where it has one</td></tr>
+        <tr><td>Signals</td><td>branch, repository, pull request, ticket keys found in prompts (the keys only)</td></tr>
+        <tr><td>Summary</td><td>Fixed checkout redirect loop</td></tr>
+        <tr><td>Postings</td><td>KD-214, direct, 100%</td></tr>
       </tbody>
     </table>
 
-    <h2 id="contributing">Issues and pull requests</h2>
-    <p>Issues are open: report bugs and ask questions on GitHub. Pull requests from outside are not accepted. The product has a fixed <a href="/docs/scope">scope</a>, and one person answers for every line of it.</p>
+    <h2 id="telemetry">Telemetry</h2>
+    <p>Telemetry push sends numbers and identifiers only, with the exact settings shown in the <a href="/docs#telemetry">quick start</a>. The ingest endpoint drops any event that carries prompt text.</p>
 
-    <h2 id="credits">Built on</h2>
-    <table>
-      <thead><tr><th>Project</th><th>Used for</th></tr></thead>
-      <tbody>
-        <tr><td>ccusage</td><td>Reading session files on the developer's machine, through its MIT adapter crates.</td></tr>
-        <tr><td>LiteLLM, models.dev</td><td>Model prices for the <a href="/docs/reference/pricing-tables">price tables</a>, refreshed daily.</td></tr>
-        <tr><td>Laya</td><td>The open local model in the reference <a href="/docs/attribute/classifier">classifier</a> script (Apache-2.0).</td></tr>
-      </tbody>
-    </table>
+    <h2 id="who-sees">Who sees what</h2>
+    <p>An agent manager sees their own cost. A people manager sees cost per person for the teams or projects they are assigned. A controller sees everything. See <a href="/docs/account/roles">Roles</a>.</p>
+
+    <h2 id="hosting">Where data is stored</h2>
+    <p>Solo and the Team plan are hosted in the EU. On the Enterprise plan you choose the region; self-hosted runs where you run it. See <a href="/docs/plans">Plans and limits</a>.</p>
 
     <h2 id="next">Where to next</h2>
     <div class="pager">
-      <a href="/docs/plans"><small>Getting started</small><b>Plans and limits</b></a>
-      <a class="next" href="/docs/self-hosting"><small>Self-hosting</small><b>Overview</b></a>
+      <a href="/docs/reference/open-source"><small>Reference</small><b>Open source and licenses</b></a>
+      <a class="next" href="/docs/faq"><small>Reference</small><b>FAQ</b></a>
     </div>
 
 
     <div class="foot">
-      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/reference/open-source.md">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/security.md">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="/privacy">Privacy</a> · <a href="/imprint">Imprint</a></span>
     </div>
   </main>
@@ -260,9 +267,11 @@ td:first-child{font-weight:600;white-space:nowrap}
   <nav class="toc" aria-label="On this page">
     <h4>On this page</h4>
     <ul>
-      <li><a href="#licenses">Licenses</a></li>
-      <li><a href="#contributing">Issues and pull requests</a></li>
-      <li><a href="#credits">Built on</a></li>
+      <li><a href="#never">What never leaves the machine</a></li>
+      <li><a href="#token-entry">What a token entry contains</a></li>
+      <li><a href="#telemetry">Telemetry</a></li>
+      <li><a href="#who-sees">Who sees what</a></li>
+      <li><a href="#hosting">Where data is stored</a></li>
       <li><a href="#next">Where to next</a></li>
     </ul>
   </nav>
