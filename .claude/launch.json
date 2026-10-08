@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "docs",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8898"],
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["docs/serve.sh"],
       "port": 8898
     }
   ]
