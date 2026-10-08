@@ -2,7 +2,7 @@
 
 Cost accounting and management control for AI agents.
 
-The docs at [tokencontroller.com/docs](https://tokencontroller.com/docs) say exactly how Token Controller works. They are written first, and the code is built to match them.
+The docs at [docs.tokencontroller.com](https://docs.tokencontroller.com) say exactly how Token Controller works. They are written first, and the code is built to match them.
 
 ## Layout
 
@@ -23,4 +23,4 @@ Rust code is one Cargo workspace (`Cargo.toml` at the root). TypeScript code is 
 - `apps/docs/glossary.md`: what every term means. The glossary page is built from it, and the rest of the docs use only these words.
 - `apps/docs/site/`: the built site. `apps/docs/site/index.html` holds the shared head and sidebar.
 
-Run `sh apps/docs/build.sh` after any change, and `sh apps/docs/serve.sh` to preview at http://localhost:8898/docs.
+Run `sh apps/docs/build.sh` after any change, and `sh apps/docs/serve.sh` to preview at http://localhost:8898. Cloudflare deploys `apps/docs/` to docs.tokencontroller.com on every push to main (`apps/docs/wrangler.jsonc`).

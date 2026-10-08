@@ -1,4 +1,4 @@
-    <p class="lead">Token Controller is cost accounting for AI agents, with management control on top. This page explains the ideas the rest of the docs build on. Every term is defined in the <a href="/docs/glossary">glossary</a>.</p>
+    <p class="lead">Token Controller is cost accounting for AI agents, with management control on top. This page explains the ideas the rest of the docs build on. Every term is defined in the <a href="/glossary">glossary</a>.</p>
 
     <h2 id="two-sides">Two sides that must match</h2>
     <p>As in double-entry bookkeeping, there are two sides, and they must add up to the same total.</p>
@@ -10,14 +10,14 @@
       </tbody>
     </table>
     <p>Once the token entries add up to the bill, the bill can be split down to the work that caused it.</p>
-    <p>Some token entries arrive <b>automatically</b>: cloud agents, CI agents, a support agent that answers email. Usage that exists only on a person's machine is handed in on a <a href="/docs/account/cadence">token sheet</a>, the way hours go on a timesheet.</p>
+    <p>Some token entries arrive <b>automatically</b>: cloud agents, CI agents, a support agent that answers email. Usage that exists only on a person's machine is handed in on a <a href="/account/cadence">token sheet</a>, the way hours go on a timesheet.</p>
 
     <h2 id="two-trees">Every cost is booked twice</h2>
     <p>A timesheet books hours both to a person and to a ticket. Token Controller does the same with cost.</p>
     <table>
       <thead><tr><th>Booked to</th><th>Answers</th><th>How it is built</th></tr></thead>
       <tbody>
-        <tr><td>Cost center</td><td>Who answers for it?</td><td>Every token entry has exactly one agent manager. You are the agent manager of your own sessions. A tech lead is the agent manager of the CI automations they set up. People sit in the <a href="/docs/account/organizations">team tree</a>: person, team, department, organization. Every node of that tree is a cost center.</td></tr>
+        <tr><td>Cost center</td><td>Who answers for it?</td><td>Every token entry has exactly one agent manager. You are the agent manager of your own sessions. A tech lead is the agent manager of the CI automations they set up. People sit in the <a href="/account/organizations">team tree</a>: person, team, department, organization. Every node of that tree is a cost center.</td></tr>
         <tr><td>Cost object</td><td>What did it pay for?</td><td>A ticket, a project or the organization. Tickets can sit inside other tickets, so a project's cost is the sum of its tickets. A client is a label on a project; projects with the same client can be totalled.</td></tr>
       </tbody>
     </table>
@@ -43,13 +43,13 @@
 
     <h2 id="accounted">Every token, accounted for</h2>
     <p>All of the bill is always accounted for. Whatever is not placed shows as unattributed, and whatever no token entry explains shows as residual. Neither is ever hidden.</p>
-    <p><b>Attribution</b> is the share placed on tickets and projects. Expect 70 to 80 percent at first, improving month by month. Each organization sets its <a href="/docs/account/target">attribution target</a>; the default is 80 percent.</p>
+    <p><b>Attribution</b> is the share placed on tickets and projects. Expect 70 to 80 percent at first, improving month by month. Each organization sets its <a href="/account/target">attribution target</a>; the default is 80 percent.</p>
     <p>Every figure says what it is: billed, a list-price estimate, or an unknown model.</p>
 
     <h2 id="loop">The loop</h2>
     <p>On top of the accounting sits the classic budgeting loop: plan, record, compare, correct.</p>
     <ol class="steps">
-      <li><b>Plan.</b><p>A <a href="/docs/account/token-budgets">token budget</a> on a person (for example 1,500 EUR a month), a ticket, a project or a period. You type it, or accept a token forecast: what Token Controller predicts from what similar work cost before, with the ticket system's size figure as one input.</p></li>
+      <li><b>Plan.</b><p>A <a href="/account/token-budgets">token budget</a> on a person (for example 1,500 EUR a month), a ticket, a project or a period. You type it, or accept a token forecast: what Token Controller predicts from what similar work cost before, with the ticket system's size figure as one input.</p></li>
       <li><b>Record.</b><p>Token entries come in and rules place them.</p></li>
       <li><b>Compare.</b><p>Actual against token budget, per person, ticket and project, broken down to tickets.</p></li>
       <li><b>Correct.</b><p>Overruns and underruns both get a look. An overrun may be a problem. An underrun may mean someone can teach the others, or that the next token forecast should be lower. History feeds the next token forecast, so a new client project can be quoted from what similar work cost before.</p></li>
@@ -57,17 +57,17 @@
     <p>Every part of the loop is optional. You can use Token Controller only to collect token entries and match them to the bill, and add token budgets later. A token budget never stops spending; there are no spend alerts and no spend caps.</p>
 
     <h2 id="ends">Where Token Controller ends</h2>
-    <p>Token Controller ends at the <a href="/docs/report/cost-sheet">cost sheet</a>: the locked account of one closed period. Charging a client for what is on it (pass-through) happens in your own invoicing tool.</p>
+    <p>Token Controller ends at the <a href="/report/cost-sheet">cost sheet</a>: the locked account of one closed period. Charging a client for what is on it (pass-through) happens in your own invoicing tool.</p>
 
     <h2 id="sources">Any provider, any agent</h2>
     <p>Bills come from several kinds of cost source: subscriptions, seats, usage at API rates, API keys, cloud marketplaces (Bedrock, Vertex, Foundry) and tools that resell model usage. Token Controller treats them all the same way.</p>
     <p>Coding agents came first because their session files sit on the developer's machine. Any agent that can report home works, including remote and support agents.</p>
 
     <h2 id="local">Local first</h2>
-    <p>The <a href="/docs/collect/cli">CLI</a> is fully useful with no service connected, including an export for reporting by hand in a spreadsheet. The local tool and the service talk over a documented protocol, so the local tool can connect to any compatible service, or none. Transcripts never leave the machine.</p>
+    <p>The <a href="/collect/cli">CLI</a> is fully useful with no service connected, including an export for reporting by hand in a spreadsheet. The local tool and the service talk over a documented protocol, so the local tool can connect to any compatible service, or none. Transcripts never leave the machine.</p>
 
     <h2 id="next">Where to next</h2>
     <div class="pager">
-      <a href="/docs/account/roles"><small>Account</small><b>Roles</b></a>
-      <a class="next" href="/docs/reference/data-model"><small>Reference</small><b>Data model</b></a>
+      <a href="/account/roles"><small>Account</small><b>Roles</b></a>
+      <a class="next" href="/reference/data-model"><small>Reference</small><b>Data model</b></a>
     </div>

@@ -4,11 +4,11 @@
     <table>
       <thead><tr><th>Provider</th><th>How</th></tr></thead>
       <tbody>
-        <tr><td>Anthropic, Enterprise plan</td><td><a href="/docs/integrations/anthropic-enterprise">Enterprise Analytics API</a></td></tr>
-        <tr><td>Anthropic Console</td><td><a href="/docs/integrations/anthropic-console">Usage and Cost Admin API</a></td></tr>
-        <tr><td>OpenAI</td><td><a href="/docs/integrations/openai">Costs API</a></td></tr>
-        <tr><td>Bedrock, Vertex, Foundry</td><td>The cloud's export as <a href="/docs/integrations/csv">CSV</a>, or a connector on an Enterprise plan contract</td></tr>
-        <tr><td>Anything else</td><td>CSV upload, typed in by hand, or the bills endpoint of the <a href="/docs/reference/api">HTTP API</a></td></tr>
+        <tr><td>Anthropic, Enterprise plan</td><td><a href="/integrations/anthropic-enterprise">Enterprise Analytics API</a></td></tr>
+        <tr><td>Anthropic Console</td><td><a href="/integrations/anthropic-console">Usage and Cost Admin API</a></td></tr>
+        <tr><td>OpenAI</td><td><a href="/integrations/openai">Costs API</a></td></tr>
+        <tr><td>Bedrock, Vertex, Foundry</td><td>The cloud's export as <a href="/integrations/csv">CSV</a>, or a connector on an Enterprise plan contract</td></tr>
+        <tr><td>Anything else</td><td>CSV upload, typed in by hand, or the bills endpoint of the <a href="/reference/api">HTTP API</a></td></tr>
       </tbody>
     </table>
     <p>A provider can restate a bill. Each bill keeps its revisions.</p>
@@ -29,4 +29,4 @@
     <p>The web app says which applies to your organization.</p>
 
     <h2 id="values">List value and billed value</h2>
-    <p>Every token entry has a list value: the agent's reported cost where it has one (Claude Code does), otherwise its token counts times the <a href="/docs/reference/pricing-tables">price table</a> for the model. A billed value exists where a bill or billed telemetry says what was actually charged. Every figure is labelled billed, list-price estimate, or unknown model.</p>
+    <p>Every token entry has a list value: the agent's reported cost where it has one (Claude Code does), otherwise its token counts times the <a href="/reference/pricing-tables">price table</a> for the model. A billed value exists where a bill or billed telemetry says what was actually charged. Every figure is labelled billed, list-price estimate, or unknown model.</p>
