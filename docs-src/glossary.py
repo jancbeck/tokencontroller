@@ -1,6 +1,6 @@
 import pathlib
 import re,html
-src=open(pathlib.Path(__file__).resolve().parents[2]/'GLOSSARY.md').read()
+src=open(pathlib.Path(__file__).resolve().parents[1]/'GLOSSARY.md').read()
 lines=src.split('\n')
 out=['    <p class="lead">The precise meaning of every term in Token Controller. The product and these docs use these words, and only these.</p>\n']
 i=0; cur=None

@@ -3,7 +3,7 @@ import sys,re,os
 slug,title,group,desc,bodyf=sys.argv[1:6]
 import pathlib
 here=pathlib.Path(__file__).resolve().parent
-root=str(here.parent/'public')+'/'
+root=str(here.parent)+'/'
 s=open(root+'docs/index.html').read()
 head=s[:s.index('  <main class="main">')]
 head=head.replace('<title>Overview — Token Controller Docs</title>',f'<title>{title} — Token Controller Docs</title>')

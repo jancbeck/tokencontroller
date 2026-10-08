@@ -1,0 +1,4 @@
+.DS_Store
+
+# Skills are installed per session, not kept here
+.claude/skills
