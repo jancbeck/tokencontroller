@@ -185,7 +185,7 @@ An instruction that turns signals into postings. Organization rules run before p
 _Avoid_: Filter, mapping
 
 **Classifier**:
-An optional program on the developer's machine that picks among candidate tickets when rules cannot.
+An optional program on a person's machine that picks among candidate tickets when rules cannot.
 
 **Report**:
 A view people managers read, such as token budget versus actual per project.

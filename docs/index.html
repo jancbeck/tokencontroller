@@ -264,7 +264,7 @@ td:first-child{font-weight:600;white-space:nowrap}
         <tr><td>Bills</td><td>The provider's figure for one period: gross, discount, credit and net.</td><td>Anthropic and OpenAI admin APIs, a CSV upload, manual entry, or the bills endpoint.</td></tr>
       </tbody>
     </table>
-    <div class="note"><b>Join keys.</b> Telemetry and token entries share the session and message IDs. Token entries and bills share person and day. A token entry never needs telemetry to exist, and telemetry never needs a token entry to be counted. When both exist they are joined, never counted twice.</div>
+    <div class="note"><b>Join keys.</b> Telemetry and token entries share the session and message IDs. Token entries and bills share the period: the token entries of a period must add up to its bill. A token entry never needs telemetry to exist, and telemetry never needs a token entry to be counted. When both exist they are joined, never counted twice.</div>
 
     <h2 id="managers">Quick start for people managers</h2>
     <p>About fifteen minutes, once. You need an admin login at Anthropic or OpenAI to connect the bill; everything else is inside Token Controller.</p>
@@ -273,7 +273,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><b>Connect the bill.</b><p>Under <em>Bills</em>, add an Anthropic Enterprise Analytics key or a Console admin key, or an OpenAI admin key. The first pull loads the current and previous period. No provider API? Upload the bill as CSV once per period.</p></li>
       <li><b>Create your projects.</b><p>Label each project with its client, give it its ticket key pattern, for example <code>^KD-\d+</code>, and map the repositories that belong to it. Connect Jira Cloud, Azure DevOps or GitHub Issues so tickets and their sizes sync every fifteen minutes. If you want the loop, give people, tickets or the project a token budget now, or accept a token forecast once there are past periods to learn from.</p></li>
       <li><b>Invite people.</b><p>Members get a link. When they install the Claude Code mod or the CLI, their sessions turn into draft token entries and the rules you just wrote place them. For everyone on Claude Code at once, paste the <a href="#telemetry">telemetry block</a> into managed settings and skip the laptops entirely. Optionally set a cadence, such as weekly; an agent manager whose token sheet is late gets a reminder.</p></li>
-      <li><b>Close the first period.</b><p>On the first business day, a controller opens <em>Close</em>. Check the unattributed line, reject anything wrong back to its agent manager with a reason, then close the period. With approval on, every token entry in the period has to be approved first. Export the cost sheet as CSV or hand finance the link.</p></li>
+      <li><b>Close the first period.</b><p>Once the period's bill is final, a controller opens <em>Close</em>. Some bills take weeks: Anthropic Enterprise figures are final <a href="/docs/integrations/anthropic-enterprise#reconciles">about 30 days</a> after the period ends. Check the unattributed line, reject anything wrong back to its agent manager with a reason, then close the period. With approval on, every token entry in the period has to be approved first. Export the cost sheet as CSV or hand finance the link.</p></li>
     </ol>
 
     <h2 id="engineers">Quick start for agent managers</h2>
