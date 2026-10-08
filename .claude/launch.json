@@ -4,7 +4,7 @@
     {
       "name": "docs",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["docs/serve.sh"],
+      "runtimeArgs": ["apps/docs/serve.sh"],
       "port": 8898
     }
   ]
