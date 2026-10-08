@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roles — Token Controller Docs</title>
-<meta name="description" content="Agent manager, people manager and controller: who sees what and who can do what.">
-<link rel="canonical" href="https://tokencontroller.com/docs/account/roles">
+<title>Plans and limits — Token Controller Docs</title>
+<meta name="description" content="Solo, Team plan, Enterprise plan and self-hosted: prices, limits, payment and region.">
+<link rel="canonical" href="https://tokencontroller.com/docs/plans">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,7 +127,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs">Overview</a></li>
       <li><a href="/docs/quick-start">Quick start</a></li>
       <li><a href="/docs/concepts">Concepts</a></li>
-      <li><a href="/docs/plans">Plans and limits</a></li>
+      <li><a class="cur" href="/docs/plans">Plans and limits</a></li>
       <li><a href="/docs/scope">Scope</a></li>
     </ul></div>
     <div class="grp"><h4>Collect</h4><ul>
@@ -151,7 +151,7 @@ td:first-child{font-weight:600;white-space:nowrap}
     </ul></div>
     <div class="grp"><h4>Account</h4><ul>
       <li><a href="/docs/account/organizations">Organization and team tree</a></li>
-      <li><a class="cur" href="/docs/account/roles">Roles</a></li>
+      <li><a href="/docs/account/roles">Roles</a></li>
       <li><a href="/docs/account/projects">Projects and clients</a></li>
       <li><a href="/docs/account/tickets">Tickets</a></li>
       <li><a href="/docs/account/agent-managers">Agent managers</a></li>
@@ -207,12 +207,12 @@ td:first-child{font-weight:600;white-space:nowrap}
   </aside>
 
   <main class="main">
-    <div class="crumb"><a href="/docs">Docs</a> / Account / Roles</div>
-    <h1>Roles</h1>
-    <p class="lead">Roles decide what you see. The two trees decide where cost sits. At sign-up there is one question: do you manage agents, or do you manage people?</p>
+    <div class="crumb"><a href="/docs">Docs</a> / Getting started / Plans and limits</div>
+    <h1>Plans and limits</h1>
+    <p class="lead">There are four ways to run Token Controller. Prices are per organization. Nothing is priced per seat.</p>
 
     <details class="mside"><summary>Browse the docs</summary><div class="side">
-      <div class="grp"><h4>Getting started</h4><ul><li><a href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a href="/docs/plans">Plans and limits</a></li><li><a href="/docs/scope">Scope</a></li></ul></div>
+      <div class="grp"><h4>Getting started</h4><ul><li><a href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a class="cur" href="/docs/plans">Plans and limits</a></li><li><a href="/docs/scope">Scope</a></li></ul></div>
       <div class="grp"><h4>Collect</h4><ul><li><a href="/docs/collect/claude-code">Claude Code mod</a></li><li><a href="/docs/collect/cli">CLI</a></li><li><a href="/docs/collect/telemetry">Telemetry push</a></li><li><a href="/docs/collect/github-action">GitHub Action</a></li><li><a href="/docs/collect/token-entries">Token entries endpoint</a></li></ul></div>
       <div class="grp"><h4>Attribute</h4><ul><li><a href="/docs/attribute/rules">Rules</a></li><li><a href="/docs/attribute/review">Review and submit</a></li></ul></div>
       <div class="grp"><h4>Account</h4><ul><li><a href="/docs/account/bills">Bills</a></li><li><a href="/docs/account/close">Monthly close</a></li></ul></div>
@@ -222,40 +222,38 @@ td:first-child{font-weight:600;white-space:nowrap}
     </div></details>
 
 
-    <h2 id="roles">The three roles</h2>
-    <p>Roles stack: each one includes everything the one before it can do. A member is anyone in the organization, whatever their role.</p>
+    <h2 id="plans">The four plans</h2>
     <table>
-      <thead><tr><th>Role</th><th>Who has it</th><th>What it can do</th></tr></thead>
+      <thead><tr><th>Plan</th><th>Price</th><th>What you get</th></tr></thead>
       <tbody>
-        <tr><td>Agent manager</td><td>Anyone who uses an agent: developers, designers, QA, architects, managers.</td><td>Reviews and submits their own token sheets. Sees their own cost.</td></tr>
-        <tr><td>People manager</td><td>Tech leads and heads of department for teams. Project managers, directors of delivery and account managers for projects.</td><td>Reads reports for the teams or projects they are assigned. Sets token budgets and cadence there. Approves token entries, or rejects them back with a reason.</td></tr>
-        <tr><td>Controller</td><td>Whoever answers for the numbers as a whole.</td><td>Sees everything. Runs the monthly close. Posts adjustments to closed periods.</td></tr>
+        <tr><td>Solo</td><td>Free, hosted</td><td>One person, one organization, every feature. No card needed.</td></tr>
+        <tr><td>Team plan</td><td>200 USD a month per organization, or 2,000 USD a year</td><td>Up to 150 members. Roles, review, approval and reject, monthly close, ticket sync, hosting in the EU. 14-day trial.</td></tr>
+        <tr><td>Enterprise plan</td><td>Custom</td><td>For more than 150 members or for isolation needs. An isolated hosted instance in the region you choose, OIDC and SCIM, an audit log, telemetry passthrough to your own collector, cloud bill connectors on request, a support SLA.</td></tr>
+        <tr><td>Self-hosted</td><td>Free, AGPL-3.0</td><td>The same Docker image and features as the Team plan, on your own Postgres in your own region. Community support on GitHub. With a support contract it becomes an Enterprise plan.</td></tr>
       </tbody>
     </table>
-    <div class="note"><b>Examples.</b> A director of delivery is a people manager over all projects. A head of engineering is a people manager over all engineering teams.</div>
 
-    <h2 id="scope">What a people manager sees</h2>
-    <p>A people manager sees cost per person within what they are assigned. A controller sees cost per person for the whole organization. There is no mode that hides people behind team totals; see <a href="/docs/scope">Scope</a>.</p>
+    <h2 id="organizations">One account, one organization</h2>
+    <p>One account belongs to one organization. An agency whose clients each have their own AI account runs one organization per client.</p>
 
-    <h2 id="not-roles">Relationships that are not roles</h2>
-    <p>A ticket has an <b>assignee</b>, the person it is assigned to. Being an assignee grants nothing and costs nothing: the cost of a ticket sits with the agent manager of each token entry on it.</p>
-    <p>Every token entry has exactly one <b>agent manager</b>, who answers for its cost. For a CI automation that is the person who set it up.</p>
+    <h2 id="members">The 150-member limit</h2>
+    <p>The Team plan stops at 150 members. There is no member 151 on the Team plan: an organization that needs more moves to the Enterprise plan. Every member counts the same, whatever their role.</p>
 
-    <h2 id="finance">Finance</h2>
-    <p>Finance needs no login and sets nothing up. A controller hands finance the <a href="/docs/report/cost-sheet">cost sheet</a> or a CSV export.</p>
+    <h2 id="payment">Payment and currency</h2>
+    <p>The Team plan is paid by card through Stripe. The Enterprise plan is paid by invoice. Prices are in USD; invoices in EUR are available on request.</p>
 
-    <h2 id="plans">Roles and plans</h2>
-    <p>On the free Solo plan one person holds every role. Roles for several people come with the Team plan; see <a href="/docs/plans">Plans and limits</a>.</p>
+    <h2 id="region">Where your data lives</h2>
+    <p>Solo and the Team plan are hosted in the EU. On the Enterprise plan you choose the region. Self-hosted runs wherever you run it.</p>
 
     <h2 id="next">Where to next</h2>
     <div class="pager">
-      <a href="/docs/concepts"><small>Getting started</small><b>Concepts</b></a>
-      <a class="next" href="/docs/account/approval"><small>Account</small><b>Approval</b></a>
+      <a href="/docs/scope"><small>Getting started</small><b>Scope</b></a>
+      <a class="next" href="/docs/self-hosting"><small>Self-hosting</small><b>Overview</b></a>
     </div>
 
 
     <div class="foot">
-      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/account/roles.md">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/plans.md">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="/privacy">Privacy</a> · <a href="/imprint">Imprint</a></span>
     </div>
   </main>
@@ -263,11 +261,11 @@ td:first-child{font-weight:600;white-space:nowrap}
   <nav class="toc" aria-label="On this page">
     <h4>On this page</h4>
     <ul>
-      <li><a href="#roles">The three roles</a></li>
-      <li><a href="#scope">What a people manager sees</a></li>
-      <li><a href="#not-roles">Relationships that are not roles</a></li>
-      <li><a href="#finance">Finance</a></li>
-      <li><a href="#plans">Roles and plans</a></li>
+      <li><a href="#plans">The four plans</a></li>
+      <li><a href="#organizations">One account, one organization</a></li>
+      <li><a href="#members">The 150-member limit</a></li>
+      <li><a href="#payment">Payment and currency</a></li>
+      <li><a href="#region">Where your data lives</a></li>
       <li><a href="#next">Where to next</a></li>
     </ul>
   </nav>

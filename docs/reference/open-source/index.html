@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roles — Token Controller Docs</title>
-<meta name="description" content="Agent manager, people manager and controller: who sees what and who can do what.">
-<link rel="canonical" href="https://tokencontroller.com/docs/account/roles">
+<title>Open source and licenses — Token Controller Docs</title>
+<meta name="description" content="Licenses for the service and the local tools, how issues work, and the projects Token Controller builds on.">
+<link rel="canonical" href="https://tokencontroller.com/docs/reference/open-source">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,7 +151,7 @@ td:first-child{font-weight:600;white-space:nowrap}
     </ul></div>
     <div class="grp"><h4>Account</h4><ul>
       <li><a href="/docs/account/organizations">Organization and team tree</a></li>
-      <li><a class="cur" href="/docs/account/roles">Roles</a></li>
+      <li><a href="/docs/account/roles">Roles</a></li>
       <li><a href="/docs/account/projects">Projects and clients</a></li>
       <li><a href="/docs/account/tickets">Tickets</a></li>
       <li><a href="/docs/account/agent-managers">Agent managers</a></li>
@@ -199,7 +199,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/reference/bill">Bill schema</a></li>
       <li><a href="/docs/reference/data-model">Data model</a></li>
       <li><a href="/docs/reference/pricing-tables">Price tables</a></li>
-      <li><a href="/docs/reference/open-source">Open source and licenses</a></li>
+      <li><a class="cur" href="/docs/reference/open-source">Open source and licenses</a></li>
       <li><a href="/docs/security">Security</a></li>
       <li><a href="/docs/faq">FAQ</a></li>
       <li><a href="/docs/glossary">Glossary</a></li>
@@ -207,9 +207,9 @@ td:first-child{font-weight:600;white-space:nowrap}
   </aside>
 
   <main class="main">
-    <div class="crumb"><a href="/docs">Docs</a> / Account / Roles</div>
-    <h1>Roles</h1>
-    <p class="lead">Roles decide what you see. The two trees decide where cost sits. At sign-up there is one question: do you manage agents, or do you manage people?</p>
+    <div class="crumb"><a href="/docs">Docs</a> / Reference / Open source and licenses</div>
+    <h1>Open source and licenses</h1>
+    <p class="lead">Token Controller is open source. The code lives in one public GitHub repository.</p>
 
     <details class="mside"><summary>Browse the docs</summary><div class="side">
       <div class="grp"><h4>Getting started</h4><ul><li><a href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a href="/docs/plans">Plans and limits</a></li><li><a href="/docs/scope">Scope</a></li></ul></div>
@@ -222,40 +222,37 @@ td:first-child{font-weight:600;white-space:nowrap}
     </div></details>
 
 
-    <h2 id="roles">The three roles</h2>
-    <p>Roles stack: each one includes everything the one before it can do. A member is anyone in the organization, whatever their role.</p>
+    <h2 id="licenses">Licenses</h2>
     <table>
-      <thead><tr><th>Role</th><th>Who has it</th><th>What it can do</th></tr></thead>
+      <thead><tr><th>Part</th><th>License</th></tr></thead>
       <tbody>
-        <tr><td>Agent manager</td><td>Anyone who uses an agent: developers, designers, QA, architects, managers.</td><td>Reviews and submits their own token sheets. Sees their own cost.</td></tr>
-        <tr><td>People manager</td><td>Tech leads and heads of department for teams. Project managers, directors of delivery and account managers for projects.</td><td>Reads reports for the teams or projects they are assigned. Sets token budgets and cadence there. Approves token entries, or rejects them back with a reason.</td></tr>
-        <tr><td>Controller</td><td>Whoever answers for the numbers as a whole.</td><td>Sees everything. Runs the monthly close. Posts adjustments to closed periods.</td></tr>
+        <tr><td>The service</td><td>AGPL-3.0. If you run a changed version for others, you share your changes.</td></tr>
+        <tr><td>CLI, Claude Code mod, GitHub Action, SDK</td><td>MIT. Use them in anything, including closed tools.</td></tr>
       </tbody>
     </table>
-    <div class="note"><b>Examples.</b> A director of delivery is a people manager over all projects. A head of engineering is a people manager over all engineering teams.</div>
 
-    <h2 id="scope">What a people manager sees</h2>
-    <p>A people manager sees cost per person within what they are assigned. A controller sees cost per person for the whole organization. There is no mode that hides people behind team totals; see <a href="/docs/scope">Scope</a>.</p>
+    <h2 id="contributing">Issues and pull requests</h2>
+    <p>Issues are open: report bugs and ask questions on GitHub. Pull requests from outside are not accepted. The product has a fixed <a href="/docs/scope">scope</a>, and one person answers for every line of it.</p>
 
-    <h2 id="not-roles">Relationships that are not roles</h2>
-    <p>A ticket has an <b>assignee</b>, the person it is assigned to. Being an assignee grants nothing and costs nothing: the cost of a ticket sits with the agent manager of each token entry on it.</p>
-    <p>Every token entry has exactly one <b>agent manager</b>, who answers for its cost. For a CI automation that is the person who set it up.</p>
-
-    <h2 id="finance">Finance</h2>
-    <p>Finance needs no login and sets nothing up. A controller hands finance the <a href="/docs/report/cost-sheet">cost sheet</a> or a CSV export.</p>
-
-    <h2 id="plans">Roles and plans</h2>
-    <p>On the free Solo plan one person holds every role. Roles for several people come with the Team plan; see <a href="/docs/plans">Plans and limits</a>.</p>
+    <h2 id="credits">Built on</h2>
+    <table>
+      <thead><tr><th>Project</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td>ccusage</td><td>Reading session files on the developer's machine, through its MIT adapter crates.</td></tr>
+        <tr><td>LiteLLM, models.dev</td><td>Model prices for the <a href="/docs/reference/pricing-tables">price tables</a>, refreshed daily.</td></tr>
+        <tr><td>Laya</td><td>The open local model in the reference <a href="/docs/attribute/classifier">classifier</a> script (Apache-2.0).</td></tr>
+      </tbody>
+    </table>
 
     <h2 id="next">Where to next</h2>
     <div class="pager">
-      <a href="/docs/concepts"><small>Getting started</small><b>Concepts</b></a>
-      <a class="next" href="/docs/account/approval"><small>Account</small><b>Approval</b></a>
+      <a href="/docs/plans"><small>Getting started</small><b>Plans and limits</b></a>
+      <a class="next" href="/docs/self-hosting"><small>Self-hosting</small><b>Overview</b></a>
     </div>
 
 
     <div class="foot">
-      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/account/roles.md">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/reference/open-source.md">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="/privacy">Privacy</a> · <a href="/imprint">Imprint</a></span>
     </div>
   </main>
@@ -263,11 +260,9 @@ td:first-child{font-weight:600;white-space:nowrap}
   <nav class="toc" aria-label="On this page">
     <h4>On this page</h4>
     <ul>
-      <li><a href="#roles">The three roles</a></li>
-      <li><a href="#scope">What a people manager sees</a></li>
-      <li><a href="#not-roles">Relationships that are not roles</a></li>
-      <li><a href="#finance">Finance</a></li>
-      <li><a href="#plans">Roles and plans</a></li>
+      <li><a href="#licenses">Licenses</a></li>
+      <li><a href="#contributing">Issues and pull requests</a></li>
+      <li><a href="#credits">Built on</a></li>
       <li><a href="#next">Where to next</a></li>
     </ul>
   </nav>
