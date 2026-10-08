@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Overview — Token Controller Docs</title>
-<meta name="description" content="What Token Controller is, how receipts, rules, statements and the monthly close fit together, and how to get a first receipt posted in ten minutes.">
+<meta name="description" content="What Token Controller is, how token entries, rules, bills and the monthly close fit together, and how to get a first token entry placed in ten minutes.">
 <link rel="canonical" href="https://tokencontroller.com/docs">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,7 +130,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/plans">Plans and limits</a></li>
     </ul></div>
     <div class="grp"><h4>Collect</h4><ul>
-      <li><a href="/docs/collect/claude-code">Claude Code plugin</a></li>
+      <li><a href="/docs/collect/claude-code">Claude Code mod</a></li>
       <li><a href="/docs/collect/cli">CLI</a></li>
       <li><a href="/docs/collect/telemetry">Telemetry push</a></li>
       <li><a href="/docs/collect/github-action">GitHub Action</a></li>
@@ -138,35 +138,35 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/collect/gemini-cli">Gemini CLI</a></li>
       <li><a href="/docs/collect/copilot-cli">Copilot CLI</a></li>
       <li><a href="/docs/collect/cursor">Cursor Enterprise</a></li>
-      <li><a href="/docs/collect/receipts-api">Receipts API</a></li>
-      <li><a href="/docs/collect/menu-bar">Menu bar app</a></li>
+      <li><a href="/docs/collect/token-entries">Token entries endpoint</a></li>
     </ul></div>
     <div class="grp"><h4>Attribute</h4><ul>
       <li><a href="/docs/attribute/rules">Rules</a></li>
       <li><a href="/docs/attribute/ticket-keys">Ticket key patterns</a></li>
       <li><a href="/docs/attribute/repositories">Repository mapping</a></li>
       <li><a href="/docs/attribute/sessions">Sessions and subagents</a></li>
-      <li><a href="/docs/attribute/review">Review and push</a></li>
-      <li><a href="/docs/attribute/classifier">Classifier hook</a></li>
+      <li><a href="/docs/attribute/review">Review and submit</a></li>
+      <li><a href="/docs/attribute/classifier">Classifier</a></li>
     </ul></div>
     <div class="grp"><h4>Account</h4><ul>
-      <li><a href="/docs/account/organizations">Organizations and members</a></li>
+      <li><a href="/docs/account/organizations">Organization and team tree</a></li>
       <li><a href="/docs/account/roles">Roles</a></li>
-      <li><a href="/docs/account/projects">Projects and tags</a></li>
+      <li><a href="/docs/account/projects">Projects and clients</a></li>
       <li><a href="/docs/account/tickets">Tickets</a></li>
-      <li><a href="/docs/account/agents">Agents and owners</a></li>
-      <li><a href="/docs/account/budgets">Budgets</a></li>
-      <li><a href="/docs/account/cadence">Reporting cadence</a></li>
-      <li><a href="/docs/account/statements">Statements</a></li>
+      <li><a href="/docs/account/agent-managers">Agent managers</a></li>
+      <li><a href="/docs/account/token-budgets">Token budgets and forecasts</a></li>
+      <li><a href="/docs/account/cadence">Cadence and token sheets</a></li>
+      <li><a href="/docs/account/approval">Approval</a></li>
+      <li><a href="/docs/account/bills">Bills</a></li>
       <li><a href="/docs/account/close">Monthly close</a></li>
       <li><a href="/docs/account/adjustments">Adjustments</a></li>
       <li><a href="/docs/account/target">Attribution target</a></li>
     </ul></div>
     <div class="grp"><h4>Report</h4><ul>
-      <li><a href="/docs/report/statement">The statement</a></li>
-      <li><a href="/docs/report/dashboards">Dashboards</a></li>
-      <li><a href="/docs/report/budget-vs-actual">Budget vs actual</a></li>
-      <li><a href="/docs/report/agents-skills">Agent and skill reports</a></li>
+      <li><a href="/docs/report/cost-sheet">The cost sheet</a></li>
+      <li><a href="/docs/report/reports">Reading reports</a></li>
+      <li><a href="/docs/report/token-budget-vs-actual">Token budget vs actual</a></li>
+      <li><a href="/docs/report/agent-harness-skills">Agent harness and skill reports</a></li>
       <li><a href="/docs/report/outliers">Outliers</a></li>
       <li><a href="/docs/report/exports">Exports</a></li>
       <li><a href="/docs/report/reporting-api">Reporting API</a></li>
@@ -179,7 +179,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/integrations/anthropic-enterprise">Anthropic Enterprise</a></li>
       <li><a href="/docs/integrations/anthropic-console">Anthropic Console</a></li>
       <li><a href="/docs/integrations/openai">OpenAI</a></li>
-      <li><a href="/docs/integrations/csv">CSV statements</a></li>
+      <li><a href="/docs/integrations/csv">CSV bills</a></li>
       <li><a href="/docs/integrations/sign-in">Sign-in providers</a></li>
     </ul></div>
     <div class="grp"><h4>Self-hosting</h4><ul>
@@ -188,14 +188,14 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/self-hosting/configuration">Configuration</a></li>
       <li><a href="/docs/self-hosting/postgres">Postgres</a></li>
       <li><a href="/docs/self-hosting/upgrades">Upgrades and backups</a></li>
-      <li><a href="/docs/self-hosting/enterprise">Enterprise instances</a></li>
+      <li><a href="/docs/self-hosting/enterprise">Enterprise plan instances</a></li>
       <li><a href="/docs/self-hosting/oidc-scim">OIDC and SCIM</a></li>
     </ul></div>
     <div class="grp"><h4>Reference</h4><ul>
       <li><a href="/docs/reference/cli">CLI</a></li>
       <li><a href="/docs/reference/api">HTTP API</a></li>
-      <li><a href="/docs/reference/receipt">Receipt schema</a></li>
-      <li><a href="/docs/reference/statement">Statement schema</a></li>
+      <li><a href="/docs/reference/token-entry">Token entry schema</a></li>
+      <li><a href="/docs/reference/bill">Bill schema</a></li>
       <li><a href="/docs/reference/data-model">Data model</a></li>
       <li><a href="/docs/reference/pricing-tables">Price tables</a></li>
       <li><a href="/docs/security">Security</a></li>
@@ -207,41 +207,41 @@ td:first-child{font-weight:600;white-space:nowrap}
   <main class="main">
     <div class="crumb"><a href="/docs">Docs</a> / Getting started / Overview</div>
     <h1>Overview</h1>
-    <p class="lead">Token Controller is cost accounting for AI agents. Agents hand in receipts, rules post them to clients, projects and tickets, and each month closes against the invoice your provider actually sent. Budgets on people, tickets and projects close the loop: plan, record, compare, correct. Every part is optional. This page explains the pieces and gets a first receipt posted.</p>
+    <p class="lead">Token Controller is cost accounting and management control for AI agents. Agents report token entries, rules place them on tickets and projects, and each period closes against the bill your provider actually sent. Token budgets on people, tickets and projects close the loop: plan, record, compare, correct. Every part is optional. This page explains the pieces and gets a first token entry placed.</p>
 
     <details class="mside"><summary>Browse the docs</summary><div class="side">
       <div class="grp"><h4>Getting started</h4><ul><li><a class="cur" href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a href="/docs/plans">Plans and limits</a></li></ul></div>
-      <div class="grp"><h4>Collect</h4><ul><li><a href="/docs/collect/claude-code">Claude Code plugin</a></li><li><a href="/docs/collect/cli">CLI</a></li><li><a href="/docs/collect/telemetry">Telemetry push</a></li><li><a href="/docs/collect/github-action">GitHub Action</a></li><li><a href="/docs/collect/receipts-api">Receipts API</a></li></ul></div>
-      <div class="grp"><h4>Attribute</h4><ul><li><a href="/docs/attribute/rules">Rules</a></li><li><a href="/docs/attribute/review">Review and push</a></li></ul></div>
-      <div class="grp"><h4>Account</h4><ul><li><a href="/docs/account/statements">Statements</a></li><li><a href="/docs/account/close">Monthly close</a></li></ul></div>
-      <div class="grp"><h4>Report</h4><ul><li><a href="/docs/report/statement">The statement</a></li><li><a href="/docs/report/budget-vs-actual">Budget vs actual</a></li></ul></div>
+      <div class="grp"><h4>Collect</h4><ul><li><a href="/docs/collect/claude-code">Claude Code mod</a></li><li><a href="/docs/collect/cli">CLI</a></li><li><a href="/docs/collect/telemetry">Telemetry push</a></li><li><a href="/docs/collect/github-action">GitHub Action</a></li><li><a href="/docs/collect/token-entries">Token entries endpoint</a></li></ul></div>
+      <div class="grp"><h4>Attribute</h4><ul><li><a href="/docs/attribute/rules">Rules</a></li><li><a href="/docs/attribute/review">Review and submit</a></li></ul></div>
+      <div class="grp"><h4>Account</h4><ul><li><a href="/docs/account/bills">Bills</a></li><li><a href="/docs/account/close">Monthly close</a></li></ul></div>
+      <div class="grp"><h4>Report</h4><ul><li><a href="/docs/report/cost-sheet">The cost sheet</a></li><li><a href="/docs/report/token-budget-vs-actual">Token budget vs actual</a></li></ul></div>
       <div class="grp"><h4>Self-hosting</h4><ul><li><a href="/docs/self-hosting">Overview</a></li><li><a href="/docs/self-hosting/docker">Docker</a></li></ul></div>
-      <div class="grp"><h4>Reference</h4><ul><li><a href="/docs/reference/cli">CLI</a></li><li><a href="/docs/reference/api">HTTP API</a></li><li><a href="/docs/reference/receipt">Receipt schema</a></li></ul></div>
+      <div class="grp"><h4>Reference</h4><ul><li><a href="/docs/reference/cli">CLI</a></li><li><a href="/docs/reference/api">HTTP API</a></li><li><a href="/docs/reference/token-entry">Token entry schema</a></li></ul></div>
     </div></details>
 
     <div class="cards">
-      <a class="card" href="#managers"><i></i><b>I run a team</b><span>Create the organization, connect the invoice, invite people, close the first month.</span></a>
-      <a class="card b" href="#engineers"><i></i><b>I run the agents</b><span>Install the plugin or the CLI, push a first receipt, forget it exists.</span></a>
+      <a class="card" href="#managers"><i></i><b>I manage people</b><span>Create the organization, connect the bill, invite people, close the first period.</span></a>
+      <a class="card b" href="#engineers"><i></i><b>I manage agents</b><span>Install the Claude Code mod or the CLI, submit a first token sheet, forget it exists.</span></a>
       <a class="card s" href="/docs/self-hosting"><i></i><b>I host it myself</b><span>One Docker image, one Postgres. The same features as the hosted Team plan.</span></a>
     </div>
 
     <h2 id="pieces">How the pieces fit</h2>
     <p>Three things flow into the ledger, and they share the same identifiers so they can be matched against each other.</p>
-    <div class="diagram" aria-label="Agents send receipts and telemetry; statements come from the provider; rules post receipts to tickets; the ledger reconciles and reports">
+    <div class="diagram" aria-label="Agents send token entries and telemetry; bills come from the provider; rules place token entries on tickets; the ledger reconciles and produces the cost sheet and reports">
       <svg viewBox="0 0 760 250" role="img">
         <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C6C1B4"/></marker></defs>
         <g font-family="Inter, sans-serif" font-size="13" fill="#141613">
           <rect x="10" y="20" width="170" height="54" rx="8" fill="#FCFBF8" stroke="#DDD9CF"/><text x="95" y="43" text-anchor="middle" font-weight="600">Agents</text><text x="95" y="61" text-anchor="middle" fill="#6B6E67" font-size="12">Claude Code, Codex, any</text>
-          <rect x="10" y="98" width="170" height="54" rx="8" fill="#FCFBF8" stroke="#DDD9CF"/><text x="95" y="121" text-anchor="middle" font-weight="600">Plugin and CLI</text><text x="95" y="139" text-anchor="middle" fill="#6B6E67" font-size="12">branch, PR, summary, review</text>
+          <rect x="10" y="98" width="170" height="54" rx="8" fill="#FCFBF8" stroke="#DDD9CF"/><text x="95" y="121" text-anchor="middle" font-weight="600">Mod and CLI</text><text x="95" y="139" text-anchor="middle" fill="#6B6E67" font-size="12">branch, PR, summary, review</text>
           <rect x="10" y="176" width="170" height="54" rx="8" fill="#FCFBF8" stroke="#DDD9CF"/><text x="95" y="199" text-anchor="middle" font-weight="600">Provider</text><text x="95" y="217" text-anchor="middle" fill="#6B6E67" font-size="12">Anthropic, OpenAI, CSV</text>
 
-          <rect x="260" y="20" width="150" height="54" rx="10" fill="#EFEBE3" stroke="#DDD9CF"/><text x="335" y="43" text-anchor="middle" font-weight="600">Telemetry</text><text x="335" y="61" text-anchor="middle" fill="#6B6E67" font-size="12">cost per API call</text>
-          <rect x="260" y="98" width="150" height="54" rx="10" fill="#E2ECE5" stroke="#DDD9CF"/><text x="335" y="121" text-anchor="middle" font-weight="600">Receipts</text><text x="335" y="139" text-anchor="middle" fill="#6B6E67" font-size="12">posted by rules</text>
-          <rect x="260" y="176" width="150" height="54" rx="10" fill="#F4E7CF" stroke="#DDD9CF"/><text x="335" y="199" text-anchor="middle" font-weight="600">Statements</text><text x="335" y="217" text-anchor="middle" fill="#6B6E67" font-size="12">the control total</text>
+          <rect x="260" y="20" width="150" height="54" rx="10" fill="#EFEBE3" stroke="#DDD9CF"/><text x="335" y="43" text-anchor="middle" font-weight="600">Telemetry</text><text x="335" y="61" text-anchor="middle" fill="#6B6E67" font-size="12">cost per model call</text>
+          <rect x="260" y="98" width="150" height="54" rx="10" fill="#E2ECE5" stroke="#DDD9CF"/><text x="335" y="121" text-anchor="middle" font-weight="600">Token entries</text><text x="335" y="139" text-anchor="middle" fill="#6B6E67" font-size="12">placed by rules</text>
+          <rect x="260" y="176" width="150" height="54" rx="10" fill="#F4E7CF" stroke="#DDD9CF"/><text x="335" y="199" text-anchor="middle" font-weight="600">Bills</text><text x="335" y="217" text-anchor="middle" fill="#6B6E67" font-size="12">the total to add up to</text>
 
-          <rect x="490" y="72" width="150" height="106" rx="12" fill="#fff" stroke="#0F3D33" stroke-width="1.5"/><text x="565" y="112" text-anchor="middle" font-weight="600">Ledger</text><text x="565" y="131" text-anchor="middle" fill="#6B6E67" font-size="12">per organization</text><text x="565" y="148" text-anchor="middle" fill="#6B6E67" font-size="12">per month, closed</text>
+          <rect x="490" y="72" width="150" height="106" rx="12" fill="#fff" stroke="#0F3D33" stroke-width="1.5"/><text x="565" y="112" text-anchor="middle" font-weight="600">Ledger</text><text x="565" y="131" text-anchor="middle" fill="#6B6E67" font-size="12">per organization</text><text x="565" y="148" text-anchor="middle" fill="#6B6E67" font-size="12">per period, closed</text>
 
-          <rect x="670" y="72" width="80" height="106" rx="8" fill="#0F3D33"/><text x="710" y="119" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Statement</text><text x="710" y="137" text-anchor="middle" fill="#C6C1B4" font-size="11">and reports</text>
+          <rect x="670" y="72" width="80" height="106" rx="8" fill="#0F3D33"/><text x="710" y="119" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Cost sheet</text><text x="710" y="137" text-anchor="middle" fill="#C6C1B4" font-size="11">and reports</text>
         </g>
         <g stroke="#C6C1B4" stroke-width="1.4" fill="none" marker-end="url(#ar)">
           <path d="M180,47 L258,47"/><path d="M180,125 L258,125"/><path d="M180,203 L258,203"/>
@@ -253,25 +253,25 @@ td:first-child{font-weight:600;white-space:nowrap}
     <table>
       <thead><tr><th>Input</th><th>What it carries</th><th>Where it comes from</th></tr></thead>
       <tbody>
-        <tr><td>Telemetry</td><td>One event per API call: estimated cost, tokens, model, session, prompt, request and message IDs, user, organization, repository. No text.</td><td>The agent's own OpenTelemetry exporter, pointed at your organization's ingest URL. Nothing installed on laptops.</td></tr>
-        <tr><td>Receipts</td><td>One unit of work: tokens, value, time range, one-line summary, the branch and pull request, and the postings to tickets or projects.</td><td>The plugin or CLI on the developer's machine, the GitHub Action in CI, or any agent through the receipts API.</td></tr>
-        <tr><td>Statements</td><td>The provider's own billed figure for the period, with discounts and credits.</td><td>Anthropic and OpenAI admin APIs, a CSV upload, manual entry, or the statements API.</td></tr>
+        <tr><td>Telemetry</td><td>One telemetry event per model call: cost, tokens, model, session, request and message IDs, person, organization, repository. No text.</td><td>The agent's own OpenTelemetry exporter, pointed at your organization's ingest URL. Nothing installed on laptops.</td></tr>
+        <tr><td>Token entries</td><td>One agent session: tokens, cost, model, time range, a one-line summary, and the postings to tickets or projects.</td><td>Automatic from cloud, CI and support agents, through the GitHub Action or the token entries endpoint. From a person's machine through the Claude Code mod or the CLI, handed in on a token sheet.</td></tr>
+        <tr><td>Bills</td><td>The provider's figure for one period: gross, discount, credit and net.</td><td>Anthropic and OpenAI admin APIs, a CSV upload, manual entry, or the bills endpoint.</td></tr>
       </tbody>
     </table>
-    <div class="note"><b>Join keys.</b> Telemetry and receipts share the session and message IDs. Receipts and statements share person and day. A receipt never needs telemetry to exist, and telemetry never needs a receipt to be counted. When both exist, telemetry is the journal and the receipt is the posting.</div>
+    <div class="note"><b>Join keys.</b> Telemetry and token entries share the session and message IDs. Token entries and bills share person and day. A token entry never needs telemetry to exist, and telemetry never needs a token entry to be counted. When both exist they are joined, never counted twice.</div>
 
-    <h2 id="managers">Quick start for managers</h2>
-    <p>About fifteen minutes, once. You need an owner login on your Anthropic or OpenAI organization to connect the statement; everything else is inside Token Controller.</p>
+    <h2 id="managers">Quick start for people managers</h2>
+    <p>About fifteen minutes, once. You need an admin login at Anthropic or OpenAI to connect the bill; everything else is inside Token Controller.</p>
     <ol class="steps">
-      <li><b>Create the organization.</b><p>Sign up at <a href="/signup"><code>tokencontroller.com/signup</code></a>. Pick how you pay your provider: Enterprise at API rates, Team seats, Console, a cloud marketplace, or none yet. This decides what the close reconciles against, and the statement will say so in plain words.</p></li>
-      <li><b>Connect the statement.</b><p>Under <em>Statements</em>, add an Anthropic Enterprise Analytics key or a Console admin key, or an OpenAI admin key. The first pull loads the current and previous month. No provider API? Upload the invoice CSV once a month.</p></li>
-      <li><b>Create a project per client.</b><p>Give each project its ticket key pattern, for example <code>^KD-\d+</code>, and map the repositories that belong to it. Connect Jira Cloud, Azure DevOps or GitHub Issues so tickets and estimates sync every fifteen minutes. If you want the loop, give people, tickets or the project a budget now, or later from past months.</p></li>
-      <li><b>Invite people.</b><p>Members get a link. When they install the plugin or CLI, their sessions turn into receipts and the rules you just wrote post them. For a whole team on Claude Code, paste the telemetry block from step 5 of the engineers' guide into managed settings and skip the laptops entirely. Optionally set a reporting cadence, such as weekly; people who have not pushed by then get a reminder.</p></li>
-      <li><b>Close the first month.</b><p>On the first business day, open <em>Close</em>. Review the unattributed list, send anything wrong back to its developer with a reason, then lock. Export the statement as CSV or hand finance the link.</p></li>
+      <li><b>Create the organization.</b><p>Sign up at <a href="/signup"><code>tokencontroller.com/signup</code></a>. Pick your cost source, the way your provider charges you: an Enterprise plan at API rates, Team plan seats, Console, a cloud marketplace, or none yet. This decides what the close reconciles against, and the cost sheet will say so in plain words.</p></li>
+      <li><b>Connect the bill.</b><p>Under <em>Bills</em>, add an Anthropic Enterprise Analytics key or a Console admin key, or an OpenAI admin key. The first pull loads the current and previous period. No provider API? Upload the bill as CSV once per period.</p></li>
+      <li><b>Create your projects.</b><p>Label each project with its client, give it its ticket key pattern, for example <code>^KD-\d+</code>, and map the repositories that belong to it. Connect Jira Cloud, Azure DevOps or GitHub Issues so tickets and their sizes sync every fifteen minutes. If you want the loop, give people, tickets or the project a token budget now, or accept a token forecast once there are past periods to learn from.</p></li>
+      <li><b>Invite people.</b><p>Members get a link. When they install the Claude Code mod or the CLI, their sessions turn into draft token entries and the rules you just wrote place them. For everyone on Claude Code at once, paste the <a href="#telemetry">telemetry block</a> into managed settings and skip the laptops entirely. Optionally set a cadence, such as weekly; an agent manager whose token sheet is late gets a reminder.</p></li>
+      <li><b>Close the first period.</b><p>On the first business day, a controller opens <em>Close</em>. Check the unattributed line, reject anything wrong back to its agent manager with a reason, then close the period. With approval on, every token entry in the period has to be approved first. Export the cost sheet as CSV or hand finance the link.</p></li>
     </ol>
 
-    <h2 id="engineers">Quick start for engineers</h2>
-    <p>Two commands. Receipts are drafted when a session ends, filed by your organization's rules, and pushed when you say so. If your team has a reporting cadence, push at least once per period.</p>
+    <h2 id="engineers">Quick start for agent managers</h2>
+    <p>Two commands. Token entries are drafted when a session ends and placed by your organization's rules. You review them and submit your token sheet when you say so. If a cadence is set, submit once per cadence period.</p>
     <h3 id="cli">Install the CLI</h3>
 <pre><code><span class="c"># macOS and Linux</span>
 brew install tokencontroller/tap/tc
@@ -285,24 +285,24 @@ tc status
 <span class="p">organization  Kestrel Digital       person  m.ortner@kestrel.example
 agents        claude-code, codex    rules   5 organization, 2 personal
 today         $212.40 spent         91% attributed</span></code></pre>
-    <h3 id="plugin">Add the Claude Code plugin</h3>
+    <h3 id="plugin">Add the Claude Code mod</h3>
 <pre><code><span class="c"># inside Claude Code</span>
 /plugin marketplace add tokencontroller/claude-code
 /plugin install token-controller</code></pre>
-    <p>The plugin installs three hooks and a status line. At session start it records the working directory and branch; at session end it asks the agent for one line on what it did, drafts the receipt, and files it. The status line shows <code>$212 spent · 91% attributed · KD-214</code>.</p>
-    <h3 id="review">Review and push</h3>
+    <p>The mod runs in the terminal and in the desktop Code tab. It installs three hooks and a status line. At session start it records the working directory and branch; at session end it asks the agent for its one-line summary, drafts the token entry, and places it. The status line shows <code>$212 spent · 91% attributed · KD-214</code>.</p>
+    <h3 id="review">Review and submit</h3>
 <pre><code>tc review
-<span class="p">  #  when    value    posted to            by
+<span class="p">  #  when    cost     placed on            by
   1  09:12   $41.87   KD-214 Checkout      rule: ticket key in branch
   2  11:46   $12.10   KD-214 Checkout      rule: ticket key in branch
   3  13:05   $88.30   KD-231 Search        rule: ticket key in PR title
   4  15:20    $9.75   Storefront (project) rule: repository
-  5  16:41   $60.38   ?                    unplaced, 2 candidates</span>
+  5  16:41   $60.38   ?                    unattributed, 2 candidates</span>
 
 tc place 5 KD-231
-tc push
-<span class="p">pushed 5 receipts · $212.40 · 100% attributed today</span></code></pre>
-    <h3 id="telemetry">Telemetry for a whole team, no install</h3>
+tc submit
+<span class="p">submitted token sheet · 5 token entries · $212.40 · 100% attributed</span></code></pre>
+    <h3 id="telemetry">Telemetry for everyone, no install</h3>
     <p>Claude Code, Codex, Gemini CLI and Copilot CLI can push usage straight to your organization. For Claude Code, an administrator adds this to managed settings. It sends numbers and identifiers only; the ingest endpoint drops any event that carries prompt text.</p>
 <pre><code>{
   <span class="k">"env"</span>: {
@@ -315,37 +315,46 @@ tc push
     <span class="k">"OTEL_METRICS_INCLUDE_REPOSITORY"</span>: <span class="s">"true"</span>
   }
 }</code></pre>
-    <div class="note"><b>What telemetry cannot see.</b> The branch, the pull request and the one-line summary. Those come from the plugin or CLI. Teams that only push telemetry get attribution by repository and person; teams that add the plugin get tickets.</div>
+    <div class="note"><b>What telemetry cannot see.</b> The branch, the pull request and the one-line summary. Those come from the mod or the CLI. Organizations that only push telemetry get cost placed on projects, by repository; those that add the mod get tickets.</div>
 
     <h2 id="concepts">Concepts in one table</h2>
     <table>
       <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
       <tbody>
-        <tr><td>Organization</td><td>The tenant and the billing unit. One account belongs to one organization. It has a plan type, an attribution target and members. Spend that fits no project lands here.</td></tr>
-        <tr><td>Project</td><td>A client or a product inside the organization, with tags, a ticket key pattern and mapped repositories. Optional.</td></tr>
-        <tr><td>Ticket</td><td>Any unit of work inside a project: a feature, story, epic or bug. Synced from Jira, Azure DevOps or GitHub Issues, or created by hand. Can sit inside another ticket and can carry a budget. Optional.</td></tr>
-        <tr><td>Person</td><td>A member. Every cost has one: the person who answers for it. Your own sessions are yours; a CI automation belongs to whoever set it up. Each person sits in one team.</td></tr>
-        <tr><td>Team</td><td>Where people sit, following your org chart: team, then department, then the organization. Separate from projects, because one developer can work on several projects but belongs to one team.</td></tr>
-        <tr><td>Role</td><td>What someone can see. A member sends receipts and sees their own. A manager reads reports for the teams, projects or clients they are assigned, and sets budgets and reporting cadence there. An owner sees everything and runs the close.</td></tr>
-        <tr><td>Agent</td><td>Anything that reports cost: a local coding agent, a CI automation such as a review bot, a remote agent. Every agent has exactly one owner. An agent without an owner shows up as an error until someone takes it.</td></tr>
-        <tr><td>Receipt</td><td>Spend from one session or session segment, with tokens, value, summary, evidence and status: draft, pushed, rejected, posted, locked.</td></tr>
-        <tr><td>Posting</td><td>A receipt's assignment to a ticket, a project or the organization, with a share and a kind: direct, project overhead, organization overhead or personal. A receipt can have several. When nothing more specific matches, a posting falls back from ticket to project to organization.</td></tr>
-        <tr><td>Budget</td><td>A planned figure for a person, ticket, project or period. Typed, imported from the ticket system's estimate, or taken from similar past work. Compared with actual spend in reports. Optional, and never a cap.</td></tr>
-        <tr><td>Rule</td><td>An ordered match on a signal, such as a branch pattern or a repository, and a target. Organization rules run before personal rules.</td></tr>
-        <tr><td>Statement</td><td>The provider's billed figure for a period: gross, discount, credit, net, currency, source, revision.</td></tr>
-        <tr><td>Period</td><td>One calendar month per organization. Closing locks receipts and statements. Adjustments after close are separate, signed entries.</td></tr>
-        <tr><td>Residual</td><td>The statement minus everything measured: discounts, unmeasured seats, chat usage, restatements. Always shown, never hidden.</td></tr>
+        <tr><td>Organization</td><td>One customer of Token Controller: its people, teams, projects and periods. One account belongs to one organization. It sets an attribution target and whether approval is on.</td></tr>
+        <tr><td>Project</td><td>A body of work made of tickets, with a ticket key pattern and mapped repositories. A client is a label on a project; projects with the same client can be totalled.</td></tr>
+        <tr><td>Ticket</td><td>Any unit of work: a feature, a story, an epic or a bug. Synced from Jira Cloud, Azure DevOps or GitHub Issues, or created by hand. Tickets can sit inside other tickets and can carry a token budget.</td></tr>
+        <tr><td>Person</td><td>A human in the organization. A person belongs to one team at a time.</td></tr>
+        <tr><td>Team tree</td><td>The organization's people arranged as person, team, department, organization. Separate from projects, because one person can work on several projects but sits in one team.</td></tr>
+        <tr><td>Role</td><td>What someone can see; each role includes the one before it. An agent manager submits token sheets and sees their own cost. A people manager reads reports, sets token budgets and cadence, and approves or rejects token entries, for the teams or projects they are assigned. A controller sees everything, runs the close and posts adjustments.</td></tr>
+        <tr><td>Agent</td><td>Anything that calls a model and so costs money: a coding agent on a laptop, a CI automation such as a review bot, a support agent. Token Controller keeps no record of agents, only of the cost they cause. Each token entry names the agent harness, the model and an optional agent name.</td></tr>
+        <tr><td>Agent manager</td><td>Every token entry has exactly one, who answers for its cost. Your own sessions are yours; a CI automation belongs to whoever set it up. A token entry without an agent manager shows as an error until someone takes it.</td></tr>
+        <tr><td>Token entry</td><td>One agent session's account of what it spent and on what work: tokens, cost, model, time range and a one-line summary. Its status is draft, submitted, approved, rejected or locked.</td></tr>
+        <tr><td>Token sheet</td><td>One agent manager's token entries for one cadence period that were not reported automatically. Automatic token entries, from cloud, CI and support agents, are never on a token sheet.</td></tr>
+        <tr><td>Cadence</td><td>The rhythm in which token sheets are due, set by a people manager: weekly, every two weeks, monthly or custom. A token sheet not submitted when its cadence period is over is late, and its agent manager gets a reminder.</td></tr>
+        <tr><td>Cost center</td><td>Who answers for a cost. Every posting lands on one person, its agent manager, and rolls up through the team tree.</td></tr>
+        <tr><td>Cost object</td><td>The work a cost paid for: a ticket, a project or the organization. When no ticket matches, a posting falls back to the project, then to the organization.</td></tr>
+        <tr><td>Posting</td><td>The placement of a token entry, or a share of it, on one cost object with one cost kind: direct, project overhead, organization overhead, personal or unattributed.</td></tr>
+        <tr><td>Rule</td><td>An instruction that turns signals, such as a branch or a repository, into postings. Organization rules run before personal ones.</td></tr>
+        <tr><td>Token budget</td><td>Money a human has planned for a person, a ticket, a project or a period. Typed, or accepted from a token forecast. It is compared with actual cost and never stops spending.</td></tr>
+        <tr><td>Token forecast</td><td>Money Token Controller predicts for a ticket, a project or a period from past cost. It becomes a token budget only when a person accepts it.</td></tr>
+        <tr><td>Bill</td><td>A provider's figure for one period: gross, discount, credit and net. It is the total the token entries must add up to.</td></tr>
+        <tr><td>Period</td><td>One calendar month, open or closed. The close locks its token entries and postings and produces the cost sheet. An adjustment is a signed correction a controller posts to a closed period.</td></tr>
+        <tr><td>Cost sheet</td><td>The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill. With approval on, it holds approved cost only.</td></tr>
+        <tr><td>Unattributed</td><td>Spend that no rule or person has placed yet. Always shown as its own line.</td></tr>
+        <tr><td>Residual</td><td>The part of a bill that no token entry explains, such as unmeasured seats, chat usage or a restated bill. Always shown as its own line.</td></tr>
       </tbody>
     </table>
+    <p>The full list is in the <a href="/docs/glossary" style="color:var(--accent)">glossary</a>.</p>
 
-    <h2 id="values">Values, estimates and money</h2>
-    <p>Every receipt carries a value at the provider's list price, computed from a price table pinned to the period. Whether that value is money depends on how you pay:</p>
+    <h2 id="values">List value, billed value and money</h2>
+    <p>Every token entry carries a list value: its cost at the provider's published prices, taken from the agent's reported cost or computed from token counts and the price table kept with the period. A billed value exists where a bill or billed telemetry says what was actually charged. Whether list value is money depends on your cost source:</p>
     <table>
-      <thead><tr><th>You pay</th><th>The close reconciles against</th><th>List value is</th></tr></thead>
+      <thead><tr><th>Cost source</th><th>The close reconciles against</th><th>List value is</th></tr></thead>
       <tbody>
-        <tr><td>Enterprise, usage at API rates</td><td>The Enterprise Analytics cost report at list price; the discount is its own line</td><td>Money, before discount</td></tr>
+        <tr><td>Enterprise plan, usage at API rates</td><td>The Enterprise Analytics cost report at list price; the discount is its own line</td><td>Money, before discount</td></tr>
         <tr><td>Console or API key</td><td>The Usage and Cost report, per workspace and day</td><td>Money</td></tr>
-        <tr><td>Team or seat-based plans</td><td>Usage credits only; in-allowance usage is not metered in dollars</td><td>An allocation, and the statement says so</td></tr>
+        <tr><td>Team plan or seat-based plans</td><td>Usage credits only; usage inside the seat is not metered in dollars</td><td>A share of the seat cost, and the cost sheet says so</td></tr>
         <tr><td>Bedrock, Vertex, Foundry</td><td>The cloud's export, uploaded as CSV</td><td>Approximate</td></tr>
       </tbody>
     </table>
@@ -357,7 +366,7 @@ tc push
     </div>
 
     <div class="foot">
-      <span>Last updated 24 September 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/overview.md">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/overview.md">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="/privacy">Privacy</a> · <a href="/imprint">Imprint</a></span>
     </div>
   </main>
@@ -366,14 +375,14 @@ tc push
     <h4>On this page</h4>
     <ul>
       <li><a href="#pieces">How the pieces fit</a></li>
-      <li><a href="#managers">Quick start for managers</a></li>
-      <li><a href="#engineers">Quick start for engineers</a></li>
+      <li><a href="#managers">Quick start for people managers</a></li>
+      <li><a href="#engineers">Quick start for agent managers</a></li>
       <li class="sub"><a href="#cli">Install the CLI</a></li>
-      <li class="sub"><a href="#plugin">Claude Code plugin</a></li>
-      <li class="sub"><a href="#review">Review and push</a></li>
-      <li class="sub"><a href="#telemetry">Telemetry for a team</a></li>
+      <li class="sub"><a href="#plugin">Claude Code mod</a></li>
+      <li class="sub"><a href="#review">Review and submit</a></li>
+      <li class="sub"><a href="#telemetry">Telemetry for everyone</a></li>
       <li><a href="#concepts">Concepts in one table</a></li>
-      <li><a href="#values">Values, estimates and money</a></li>
+      <li><a href="#values">List value, billed value and money</a></li>
       <li><a href="#next">Where to next</a></li>
     </ul>
   </nav>
