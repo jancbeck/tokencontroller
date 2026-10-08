@@ -1,5 +1,6 @@
 // Cloudflare deploys this folder to docs.tokencontroller.com on every push to main
 // (Workers Builds, connected to this repo with root directory apps/docs).
+// Every other branch gets a Preview; its URL is posted on the pull request.
 {
   "name": "tokencontroller-docs",
   "compatibility_date": "2026-09-01",
@@ -10,5 +11,7 @@
   },
   "routes": [
     { "pattern": "docs.tokencontroller.com", "custom_domain": true }
-  ]
+  ],
+  // Every pull request gets its own Preview URL; Previews need this block even when empty.
+  "previews": {}
 }
