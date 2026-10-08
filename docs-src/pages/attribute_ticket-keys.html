@@ -1,0 +1,12 @@
+    <p class="lead">A ticket key pattern tells Token Controller how a project's tickets are named, so it can find them in branches, pull requests and prompts.</p>
+
+    <h2 id="pattern">Set the pattern</h2>
+    <p>Each project has one pattern, a regular expression. For Jira-style keys:</p>
+<pre><code>^(KD|OPS)-\d+</code></pre>
+    <p>For GitHub Issues, where tickets are numbers, use the repository with the number, such as <code>storefront#\d+</code>.</p>
+
+    <h2 id="where">Where keys are found</h2>
+    <p>In the branch name, in the pull request title, and in your prompts. Only the keys leave the machine, never the prompt.</p>
+
+    <h2 id="unknown">Keys for tickets Token Controller does not know</h2>
+    <p>If a key matches the pattern but the ticket has not synced yet, the token entry is placed on it anyway, and the ticket fills in at the next sync.</p>

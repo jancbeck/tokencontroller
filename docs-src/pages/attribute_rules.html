@@ -1,0 +1,33 @@
+    <p class="lead">Rules place token entries on tickets and projects. They work like the rules in a banking app: set once, every new token entry lands where it belongs, and people only handle the exceptions.</p>
+
+    <h2 id="signals">Signals</h2>
+    <p>A signal is a fact about a session that hints at where its cost belongs:</p>
+    <ul>
+      <li>the branch and the working directory</li>
+      <li>the repository</li>
+      <li>the pull request: its title and number</li>
+      <li>ticket keys in your prompts that match a project's <a href="/docs/attribute/ticket-keys">ticket key pattern</a></li>
+      <li>the session title</li>
+      <li>the subagent type</li>
+    </ul>
+
+    <h2 id="defaults">The default rules</h2>
+    <table>
+      <thead><tr><th>Rule</th><th>Places on</th></tr></thead>
+      <tbody>
+        <tr><td>Ticket key in branch</td><td>That ticket</td></tr>
+        <tr><td>Ticket key in pull request title</td><td>That ticket</td></tr>
+        <tr><td>Repository mapped to a project</td><td>That project, as project overhead</td></tr>
+      </tbody>
+    </table>
+    <p>Add your own in the web app under <em>Rules</em>, in the mod's pane, or with the CLI.</p>
+
+    <h2 id="order">Order</h2>
+    <p>Rules run in order, and the first that matches wins. Organization rules run before personal ones, so a person's own rules only handle what the organization's rules leave open.</p>
+
+    <h2 id="several-keys">When prompts name several tickets</h2>
+    <p>By default the ticket named most often in your prompts wins, and on a tie the latest one. An organization can switch this to an equal split between the tickets, or to the first one named.</p>
+    <div class="note"><b>A mention is not work.</b> "The follow-up ticket will be KD-260" names a ticket the session did not work on. Rules cannot tell the difference. The <a href="/docs/attribute/classifier">classifier</a> can, and you can always place a token entry by hand.</div>
+
+    <h2 id="nothing">When nothing matches</h2>
+    <p>The token entry stays unattributed and shows up in your review list. The share placed by rules is your attribution; you set the <a href="/docs/account/target">attribution target</a>.</p>

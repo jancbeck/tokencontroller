@@ -1,0 +1,19 @@
+    <p class="lead">The fields of a token entry, as the token entries endpoint and CSV import take them.</p>
+
+    <h2 id="fields">Fields</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>agent_harness</code></td><td>The product the agent ran on. Required.</td></tr>
+        <tr><td><code>agent_name</code></td><td>A label for the agent, such as "review bot". Optional.</td></tr>
+        <tr><td><code>model</code></td><td>The model that did the work. Required.</td></tr>
+        <tr><td><code>started_at</code>, <code>ended_at</code></td><td>The time range. Required.</td></tr>
+        <tr><td><code>tokens</code></td><td>Counts by kind: <code>input</code>, <code>output</code>, <code>cache_write</code>, <code>cache_read</code>. Required.</td></tr>
+        <tr><td><code>reported_cost</code></td><td>The agent's own cost figure. Optional; without it the list value is computed.</td></tr>
+        <tr><td><code>summary</code></td><td>One line on what the session did. The only text.</td></tr>
+        <tr><td><code>ticket</code>, <code>project</code></td><td>Where it belongs. Optional; rules place it otherwise.</td></tr>
+        <tr><td><code>signals</code></td><td>Branch, repository, pull request, ticket keys. Optional.</td></tr>
+        <tr><td><code>session_id</code></td><td>Joins the token entry to telemetry. Optional.</td></tr>
+      </tbody>
+    </table>
+    <p>Set by Token Controller: agent manager, list value, billed value, postings, status.</p>

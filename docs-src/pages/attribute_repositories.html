@@ -1,0 +1,8 @@
+    <p class="lead">Mapping a repository to a project places every session in that repository on the project, when no ticket matches.</p>
+
+    <h2 id="map">Map a repository</h2>
+    <p>In the web app, open the project and add its repositories, such as <code>kestrel/storefront</code>. One repository belongs to one project.</p>
+
+    <h2 id="placing">What gets placed</h2>
+    <p>Sessions in a mapped repository with no ticket key land on the project as project overhead. Sessions outside any mapped repository and without a ticket key stay unattributed.</p>
+    <p>Repository mapping is the only placing that works with <a href="/docs/collect/telemetry">telemetry</a> alone, because telemetry sees the repository but not the branch.</p>

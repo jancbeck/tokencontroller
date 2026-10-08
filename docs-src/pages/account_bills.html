@@ -1,0 +1,32 @@
+    <p class="lead">A bill is a provider's figure for one period: gross, discount, credit and net. Token entries must add up to it.</p>
+
+    <h2 id="sources">Where bills come from</h2>
+    <table>
+      <thead><tr><th>Provider</th><th>How</th></tr></thead>
+      <tbody>
+        <tr><td>Anthropic, Enterprise plan</td><td><a href="/docs/integrations/anthropic-enterprise">Enterprise Analytics API</a></td></tr>
+        <tr><td>Anthropic Console</td><td><a href="/docs/integrations/anthropic-console">Usage and Cost Admin API</a></td></tr>
+        <tr><td>OpenAI</td><td><a href="/docs/integrations/openai">Costs API</a></td></tr>
+        <tr><td>Bedrock, Vertex, Foundry</td><td>The cloud's export as <a href="/docs/integrations/csv">CSV</a>, or a connector on an Enterprise plan contract</td></tr>
+        <tr><td>Anything else</td><td>CSV upload, typed in by hand, or the bills endpoint of the <a href="/docs/reference/api">HTTP API</a></td></tr>
+      </tbody>
+    </table>
+    <p>A provider can restate a bill. Each bill keeps its revisions.</p>
+
+    <h2 id="reconciliation">Reconciliation</h2>
+    <p>For each period: postings plus unattributed plus residual equal the bill. Residual is the part no token entry explains, such as seats, chat usage or a restated bill. It is always shown.</p>
+
+    <h2 id="what">What the close reconciles against</h2>
+    <table>
+      <thead><tr><th>Cost source</th><th>Reconciles against</th><th>List value is</th></tr></thead>
+      <tbody>
+        <tr><td>Enterprise plan, usage at API rates</td><td>The Enterprise Analytics cost report at list price; the discount is its own line</td><td>Money, before discount</td></tr>
+        <tr><td>Console or API key</td><td>The Usage and Cost report, per workspace and day</td><td>Money</td></tr>
+        <tr><td>Team plan or seat-based plans</td><td>Usage credits only; usage inside the seat is not metered in dollars</td><td>A share of the seat cost, and the cost sheet says so</td></tr>
+        <tr><td>Bedrock, Vertex, Foundry</td><td>The cloud's export</td><td>Approximate</td></tr>
+      </tbody>
+    </table>
+    <p>The web app says which applies to your organization.</p>
+
+    <h2 id="values">List value and billed value</h2>
+    <p>Every token entry has a list value: the agent's reported cost where it has one (Claude Code does), otherwise its token counts times the <a href="/docs/reference/pricing-tables">price table</a> for the model. A billed value exists where a bill or billed telemetry says what was actually charged. Every figure is labelled billed, list-price estimate, or unknown model.</p>

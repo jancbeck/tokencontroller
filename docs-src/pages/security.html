@@ -1,0 +1,36 @@
+    <p class="lead">What leaves a person's machine, what Token Controller stores, and who can see it.</p>
+
+    <h2 id="never">What never leaves the machine</h2>
+    <p>Transcripts, prompts, tool output and file contents. Nothing in Token Controller reads them off the machine, and no door accepts them.</p>
+
+    <h2 id="token-entry">What a token entry contains</h2>
+    <p>This is the full list. The one-line summary is the only text, and the agent writes it.</p>
+    <table>
+      <thead><tr><th>Field</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Agent harness, model</td><td>claude-code, opus-5</td></tr>
+        <tr><td>Agent name</td><td>review bot (optional)</td></tr>
+        <tr><td>Agent manager</td><td>m.ortner@kestrel.example</td></tr>
+        <tr><td>Time range</td><td>09:12 to 11:40 UTC</td></tr>
+        <tr><td>Tokens by kind</td><td>input, output, cache write, cache read</td></tr>
+        <tr><td>Reported cost</td><td>the agent's own cost figure, where it has one</td></tr>
+        <tr><td>Signals</td><td>branch, repository, pull request, ticket keys found in prompts (the keys only)</td></tr>
+        <tr><td>Summary</td><td>Fixed checkout redirect loop</td></tr>
+        <tr><td>Postings</td><td>KD-214, direct, 100%</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="telemetry">Telemetry</h2>
+    <p>Telemetry push sends numbers and identifiers only, with the exact settings shown in the <a href="/docs#telemetry">quick start</a>. The ingest endpoint drops any event that carries prompt text.</p>
+
+    <h2 id="who-sees">Who sees what</h2>
+    <p>An agent manager sees their own cost. A people manager sees cost per person for the teams or projects they are assigned. A controller sees everything. See <a href="/docs/account/roles">Roles</a>.</p>
+
+    <h2 id="hosting">Where data is stored</h2>
+    <p>Solo and the Team plan are hosted in the EU. On the Enterprise plan you choose the region; self-hosted runs where you run it. See <a href="/docs/plans">Plans and limits</a>.</p>
+
+    <h2 id="next">Where to next</h2>
+    <div class="pager">
+      <a href="/docs/reference/open-source"><small>Reference</small><b>Open source and licenses</b></a>
+      <a class="next" href="/docs/faq"><small>Reference</small><b>FAQ</b></a>
+    </div>

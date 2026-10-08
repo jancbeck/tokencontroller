@@ -1,0 +1,10 @@
+    <p class="lead">One session is one token entry. Long sessions move between branches, so they are split into segments, and subagents are placed on their own signals.</p>
+
+    <h2 id="segments">Segments</h2>
+    <p>A session that changes branch or working directory is split into segments. Each segment is placed on its own, so one morning's session can post to two tickets.</p>
+
+    <h2 id="grain">Measured per message</h2>
+    <p>Cost is measured per message, not per session. That is how segments split exactly, and how telemetry and bills join token entries: by message and request IDs.</p>
+
+    <h2 id="subagents">Subagents</h2>
+    <p>A subagent is placed on its own signals when it has them, such as a review subagent on a pull request. Otherwise it follows the session that started it.</p>
