@@ -58,7 +58,7 @@ self-hosting/docker|Docker|Self-hosting|Run the service and Postgres with Docker
 self-hosting/configuration|Configuration|Self-hosting|Environment variables for a self-hosted instance.|pages/self-hosting_configuration.html
 self-hosting/postgres|Postgres|Self-hosting|The database a self-hosted instance needs.|pages/self-hosting_postgres.html
 self-hosting/upgrades|Upgrades and backups|Self-hosting|Upgrade by pulling a new image; back up Postgres.|pages/self-hosting_upgrades.html
-self-hosting/enterprise|Enterprise plan instances|Self-hosting|Isolated hosted instances and self-hosting with support.|pages/self-hosting_enterprise.html
+self-hosting/enterprise|Enterprise plan instances|Self-hosting|Isolated hosted instances, self-hosting with support, the enterprise image and the license key.|pages/self-hosting_enterprise.html
 self-hosting/oidc-scim|OIDC and SCIM|Self-hosting|Sign in with your identity provider and keep members in step.|pages/self-hosting_oidc-scim.html
 quick-start|Quick start|Getting started|Start as a people manager, an agent manager or a self-hoster.|pages/quick-start.html
 reference/cli|CLI|Reference|Every tc command.|pages/reference_cli.html
