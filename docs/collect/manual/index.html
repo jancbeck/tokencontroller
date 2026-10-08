@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ — Token Controller Docs</title>
-<meta name="description" content="Short answers to the questions people ask first about Token Controller.">
-<link rel="canonical" href="https://tokencontroller.com/docs/faq">
+<title>Manual entry and CSV import — Token Controller Docs</title>
+<meta name="description" content="Add token entries by hand or from a CSV file in the web app.">
+<link rel="canonical" href="https://tokencontroller.com/docs/collect/manual">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +142,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/collect/copilot-cli">Copilot CLI</a></li>
       <li><a href="/docs/collect/cursor">Cursor Enterprise</a></li>
       <li><a href="/docs/collect/token-entries">Token entries endpoint</a></li>
-      <li><a href="/docs/collect/manual">Manual entry and CSV import</a></li>
+      <li><a class="cur" href="/docs/collect/manual">Manual entry and CSV import</a></li>
     </ul></div>
     <div class="grp"><h4>Attribute</h4><ul>
       <li><a href="/docs/attribute/rules">Rules</a></li>
@@ -205,15 +205,15 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/docs/reference/pricing-tables">Price tables</a></li>
       <li><a href="/docs/reference/open-source">Open source and licenses</a></li>
       <li><a href="/docs/security">Security and privacy</a></li>
-      <li><a class="cur" href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
       <li><a href="/docs/glossary">Glossary</a></li>
     </ul></div>
   </aside>
 
   <main class="main">
-    <div class="crumb"><a href="/docs">Docs</a> / Reference / FAQ</div>
-    <h1>FAQ</h1>
-    <p class="lead">Short answers to the questions people ask first.</p>
+    <div class="crumb"><a href="/docs">Docs</a> / Collect / Manual entry and CSV import</div>
+    <h1>Manual entry and CSV import</h1>
+    <p class="lead">The web app takes token entries by hand or from a CSV file, so Token Controller is useful even where no agent or local tool can report.</p>
 
     <details class="mside"><summary>Browse the docs</summary><div class="side">
       <div class="grp"><h4>Getting started</h4><ul><li><a href="/docs">Overview</a></li><li><a href="/docs/quick-start">Quick start</a></li><li><a href="/docs/concepts">Concepts</a></li><li><a href="/docs/plans">Plans and limits</a></li><li><a href="/docs/scope">Scope</a></li></ul></div>
@@ -226,36 +226,15 @@ td:first-child{font-weight:600;white-space:nowrap}
     </div></details>
 
 
-    <h2 id="per-person">Why can people managers see cost per person?</h2>
-    <p>Because clients are billed for work per person, and the providers' own admin tools already show cost per person. Works councils sometimes ask for team totals only. Token Controller has no such mode, and a people manager sees only the people in their scope.</p>
+    <h2 id="manual">Manual entry</h2>
+    <p>Under <em>Token entries</em>, choose <em>Add</em>. Give the agent harness, model, time range, tokens or cost, a summary and where it belongs. The token entry goes on your token sheet like any other.</p>
 
-    <h2 id="caps">Why are there no spend caps or spend alerts?</h2>
-    <p>Your provider already offers both. A token budget is a plan to compare against, and it never stops an agent. The only reminder Token Controller sends is for a late token sheet.</p>
-
-    <h2 id="estimates">Why doesn't the agent estimate its own cost?</h2>
-    <p>Agent self-estimates match actual cost poorly, with a correlation of about 0.4. Token forecasts come from what similar work actually cost before.</p>
-
-    <h2 id="local">Do I need the hosted service?</h2>
-    <p>No. The <a href="/docs/collect/cli">CLI</a> is fully useful on its own, including an export for a spreadsheet. Connect it to a service when you want to share numbers.</p>
-
-    <h2 id="agents">Is it only for coding agents?</h2>
-    <p>No. Coding agents came first because their session files sit on the developer's machine. Any agent that can report home, such as a support agent, sends token entries through the <a href="/docs/collect/token-entries">token entries endpoint</a>.</p>
-
-    <h2 id="mobile">Is there a mobile app?</h2>
-    <p>No. The web app is readable on a phone. See <a href="/docs/scope">Scope</a>.</p>
-
-    <h2 id="invoicing">Can I invoice my clients from Token Controller?</h2>
-    <p>No. Token Controller ends at the <a href="/docs/report/cost-sheet">cost sheet</a>. Pass-through to your clients happens in your own invoicing tool.</p>
-
-    <h2 id="next">Where to next</h2>
-    <div class="pager">
-      <a href="/docs/security"><small>Reference</small><b>Security and privacy</b></a>
-      <a class="next" href="/docs/glossary"><small>Reference</small><b>Glossary</b></a>
-    </div>
+    <h2 id="csv">CSV import</h2>
+    <p>Choose <em>Import CSV</em> and upload a file with one token entry per row. The columns are the fields of the <a href="/docs/reference/token-entry">token entry schema</a>. The import shows what it read before anything is saved. The CLI's <code>tc export --csv</code> writes the same format.</p>
 
 
     <div class="foot">
-      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/faq.md">Edit this page</a></span>
+      <span>Last updated 8 October 2026 · <a href="https://github.com/tokencontroller/tokencontroller/edit/main/docs/collect/manual.md">Edit this page</a></span>
       <span>© 2026 Jan Beck · <a href="/privacy">Privacy</a> · <a href="/imprint">Imprint</a></span>
     </div>
   </main>
@@ -263,14 +242,8 @@ td:first-child{font-weight:600;white-space:nowrap}
   <nav class="toc" aria-label="On this page">
     <h4>On this page</h4>
     <ul>
-      <li><a href="#per-person">Why can people managers see cost per person?</a></li>
-      <li><a href="#caps">Why are there no spend caps or spend alerts?</a></li>
-      <li><a href="#estimates">Why doesn't the agent estimate its own cost?</a></li>
-      <li><a href="#local">Do I need the hosted service?</a></li>
-      <li><a href="#agents">Is it only for coding agents?</a></li>
-      <li><a href="#mobile">Is there a mobile app?</a></li>
-      <li><a href="#invoicing">Can I invoice my clients from Token Controller?</a></li>
-      <li><a href="#next">Where to next</a></li>
+      <li><a href="#manual">Manual entry</a></li>
+      <li><a href="#csv">CSV import</a></li>
     </ul>
   </nav>
 </div>
