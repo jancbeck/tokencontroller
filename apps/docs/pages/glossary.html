@@ -6,7 +6,7 @@
       <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
       <tbody>
         <tr><td>Token entry</td><td>One agent session&#x27;s account of what it spent and on what work: tokens, cost, model, start and end time, and a summary. It is to a token sheet what a time entry is to a timesheet.<br><span style="color:var(--muted);font-size:.85em">Not: Receipt, report item, line item, usage record, voucher</span></td></tr>
-        <tr><td>Bill</td><td>A provider&#x27;s figure for one period: gross, discount, credit and net. It is the total the token entries must add up to.<br><span style="color:var(--muted);font-size:.85em">Not: Statement, invoice</span></td></tr>
+        <tr><td>Bill</td><td>A provider&#x27;s figure for one period&#x27;s token usage: gross, discount, credit and net. It is the total the token entries must add up to. Seats, subscriptions and other flat fees are not usage and stay off it.<br><span style="color:var(--muted);font-size:.85em">Not: Statement, invoice</span></td></tr>
         <tr><td>Token sheet</td><td>One agent manager&#x27;s token entries for one cadence period that were not reported automatically. It is the only way usage that exists on a person&#x27;s machine reaches the organization.<br><span style="color:var(--muted);font-size:.85em">Not: Report, batch</span></td></tr>
         <tr><td>Automatic</td><td>Said of a token entry the agent reports itself, with no person involved: cloud agents, CI agents, support agents. Automatic token entries are never on a token sheet.<br><span style="color:var(--muted);font-size:.85em">Not: Live</span></td></tr>
         <tr><td>Cost sheet</td><td>The locked account of one closed period for the whole organization: cost per project and ticket, adding up to the bill. With approval on, it holds approved cost only.<br><span style="color:var(--muted);font-size:.85em">Not: Statement, close sheet, monthly report</span></td></tr>
@@ -14,7 +14,7 @@
         <tr><td>Provider</td><td>A company that charges for model usage, such as Anthropic, OpenAI or a cloud marketplace.<br><span style="color:var(--muted);font-size:.85em">Not: Vendor</span></td></tr>
         <tr><td>Cost source</td><td>One way a provider charges an organization: subscription, seat, usage at API rates, API key, cloud marketplace or reseller.</td></tr>
         <tr><td>Reconciliation</td><td>Checking, per period, that postings plus unattributed plus residual equal the bill.<br><span style="color:var(--muted);font-size:.85em">Not: Matching</span></td></tr>
-        <tr><td>Residual</td><td>The part of a bill that no token entry explains. Always shown as its own line.<br><span style="color:var(--muted);font-size:.85em">Not: Leftover, difference</span></td></tr>
+        <tr><td>Residual</td><td>The part of a bill&#x27;s usage that no token entry explains, such as chat usage or a restated bill. Always shown as its own line.<br><span style="color:var(--muted);font-size:.85em">Not: Leftover, difference</span></td></tr>
       </tbody>
     </table>
 

@@ -8,12 +8,12 @@
     <span class="k">"OTEL_METRICS_EXPORTER"</span>: <span class="s">"otlp"</span>,
     <span class="k">"OTEL_LOGS_EXPORTER"</span>: <span class="s">"otlp"</span>,
     <span class="k">"OTEL_EXPORTER_OTLP_PROTOCOL"</span>: <span class="s">"http/protobuf"</span>,
-    <span class="k">"OTEL_EXPORTER_OTLP_ENDPOINT"</span>: <span class="s">"https://app.tokencontroller.com/otlp"</span>,
+    <span class="k">"OTEL_EXPORTER_OTLP_ENDPOINT"</span>: <span class="s">"https://app.tokencontroller.com/api/v1/ingest/otlp"</span>,
     <span class="k">"OTEL_EXPORTER_OTLP_HEADERS"</span>: <span class="s">"Authorization=Bearer tc_org_…"</span>,
     <span class="k">"OTEL_METRICS_INCLUDE_REPOSITORY"</span>: <span class="s">"true"</span>
   }
 }</code></pre>
-    <p>These settings send numbers and identifiers only. The ingest endpoint drops any event that carries prompt text.</p>
+    <p>The exporter adds <code>/v1/metrics</code> and <code>/v1/logs</code> to the endpoint itself. These settings send numbers and identifiers only. The ingest endpoint drops any event that carries prompt text.</p>
 
     <h2 id="others">Other agents</h2>
     <p><a href="/collect/codex">Codex CLI</a>, <a href="/collect/gemini-cli">Gemini CLI</a>, <a href="/collect/copilot-cli">Copilot CLI</a> and <a href="/collect/cursor">Cursor Enterprise</a> push to the same ingest URL with the same organization token. Each page shows that agent's settings.</p>
