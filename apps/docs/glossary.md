@@ -11,7 +11,7 @@ One agent session's account of what it spent and on what work: tokens, cost, mod
 _Avoid_: Receipt, report item, line item, usage record, voucher
 
 **Bill**:
-A provider's figure for one period: gross, discount, credit and net. It is the total the token entries must add up to.
+A provider's figure for one period's token usage: gross, discount, credit and net. It is the total the token entries must add up to. Seats, subscriptions and other flat fees are not usage and stay off it.
 _Avoid_: Statement, invoice
 
 **Token sheet**:
@@ -42,7 +42,7 @@ Checking, per period, that postings plus unattributed plus residual equal the bi
 _Avoid_: Matching
 
 **Residual**:
-The part of a bill that no token entry explains. Always shown as its own line.
+The part of a bill's usage that no token entry explains, such as chat usage or a restated bill. Always shown as its own line.
 _Avoid_: Leftover, difference
 
 ### Where cost sits
