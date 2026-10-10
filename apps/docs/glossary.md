@@ -7,7 +7,7 @@ Cost accounting and management control for AI agents: token entries from agents 
 ### The two sides
 
 **Token entry**:
-One agent session's account of what it spent and on what work: tokens, cost, model, time range and a one-line summary. It is to a token sheet what a time entry is to a timesheet.
+One agent session's account of what it spent and on what work: tokens, cost, model, start and end time, and a summary. It is to a token sheet what a time entry is to a timesheet.
 _Avoid_: Receipt, report item, line item, usage record, voucher
 
 **Bill**:
@@ -166,7 +166,7 @@ A stretch of a session on one branch and one working directory.
 The full text of a session. It never leaves the machine.
 
 **Summary**:
-The one line an agent writes about what a session did. It is the only text in a token entry.
+What an agent writes about what a session did, from one line to a short report. It is the only text in a token entry. On a token sheet, the agent manager sees it before submitting.
 
 **Telemetry event**:
 One model call as reported live by the agent: tokens, cost and IDs, no text.
@@ -178,7 +178,7 @@ _Avoid_: Integration, connector
 ### Placing token entries
 
 **Signal**:
-A fact about a session that hints at its cost object: branch, working directory, repository, pull request, or a ticket key in a prompt.
+A fact about a session that hints at its cost object: branch, working directory, repository, pull request, or a ticket key in a prompt or a title.
 
 **Rule**:
 An instruction that turns signals into postings. Organization rules run before personal ones.
@@ -186,6 +186,10 @@ _Avoid_: Filter, mapping
 
 **Classifier**:
 An optional program on a person's machine that picks among candidate tickets when rules cannot.
+
+**Summary match**:
+Token Controller placing a token entry on the open ticket its summary clearly fits, when no rule found a ticket. Always marked as such.
+_Avoid_: Auto-match, AI match
 
 **Report**:
 A view people managers read, such as token budget versus actual per project.

@@ -5,7 +5,7 @@
     <table>
       <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
       <tbody>
-        <tr><td>Token entry</td><td>One agent session&#x27;s account of what it spent and on what work: tokens, cost, model, time range and a one-line summary. It is to a token sheet what a time entry is to a timesheet.<br><span style="color:var(--muted);font-size:.85em">Not: Receipt, report item, line item, usage record, voucher</span></td></tr>
+        <tr><td>Token entry</td><td>One agent session&#x27;s account of what it spent and on what work: tokens, cost, model, start and end time, and a summary. It is to a token sheet what a time entry is to a timesheet.<br><span style="color:var(--muted);font-size:.85em">Not: Receipt, report item, line item, usage record, voucher</span></td></tr>
         <tr><td>Bill</td><td>A provider&#x27;s figure for one period: gross, discount, credit and net. It is the total the token entries must add up to.<br><span style="color:var(--muted);font-size:.85em">Not: Statement, invoice</span></td></tr>
         <tr><td>Token sheet</td><td>One agent manager&#x27;s token entries for one cadence period that were not reported automatically. It is the only way usage that exists on a person&#x27;s machine reaches the organization.<br><span style="color:var(--muted);font-size:.85em">Not: Report, batch</span></td></tr>
         <tr><td>Automatic</td><td>Said of a token entry the agent reports itself, with no person involved: cloud agents, CI agents, support agents. Automatic token entries are never on a token sheet.<br><span style="color:var(--muted);font-size:.85em">Not: Live</span></td></tr>
@@ -74,7 +74,7 @@
         <tr><td>Session</td><td>One continuous run of an agent, from start to end.<br><span style="color:var(--muted);font-size:.85em">Not: Conversation, chat</span></td></tr>
         <tr><td>Segment</td><td>A stretch of a session on one branch and one working directory.</td></tr>
         <tr><td>Transcript</td><td>The full text of a session. It never leaves the machine.</td></tr>
-        <tr><td>Summary</td><td>The one line an agent writes about what a session did. It is the only text in a token entry.</td></tr>
+        <tr><td>Summary</td><td>What an agent writes about what a session did, from one line to a short report. It is the only text in a token entry. On a token sheet, the agent manager sees it before submitting.</td></tr>
         <tr><td>Telemetry event</td><td>One model call as reported live by the agent: tokens, cost and IDs, no text.</td></tr>
         <tr><td>Door</td><td>A way token entries or telemetry reach Token Controller: session files, telemetry push, the GitHub Action or the token entries endpoint.<br><span style="color:var(--muted);font-size:.85em">Not: Integration, connector</span></td></tr>
       </tbody>
@@ -84,9 +84,10 @@
     <table>
       <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
       <tbody>
-        <tr><td>Signal</td><td>A fact about a session that hints at its cost object: branch, working directory, repository, pull request, or a ticket key in a prompt.</td></tr>
+        <tr><td>Signal</td><td>A fact about a session that hints at its cost object: branch, working directory, repository, pull request, or a ticket key in a prompt or a title.</td></tr>
         <tr><td>Rule</td><td>An instruction that turns signals into postings. Organization rules run before personal ones.<br><span style="color:var(--muted);font-size:.85em">Not: Filter, mapping</span></td></tr>
         <tr><td>Classifier</td><td>An optional program on a person&#x27;s machine that picks among candidate tickets when rules cannot.</td></tr>
+        <tr><td>Summary match</td><td>Token Controller placing a token entry on the open ticket its summary clearly fits, when no rule found a ticket. Always marked as such.<br><span style="color:var(--muted);font-size:.85em">Not: Auto-match, AI match</span></td></tr>
         <tr><td>Report</td><td>A view people managers read, such as token budget versus actual per project.<br><span style="color:var(--muted);font-size:.85em">Not: Dashboard</span></td></tr>
         <tr><td>Review</td><td>An agent manager checking their own draft token entries before submitting the token sheet.</td></tr>
         <tr><td>Submit</td><td>Handing in a token sheet for its cadence period.<br><span style="color:var(--muted);font-size:.85em">Not: Push, sync, upload</span></td></tr>
