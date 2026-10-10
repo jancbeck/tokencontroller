@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enterprise plan instances — Token Controller Docs</title>
-<meta name="description" content="Isolated hosted instances, self-hosting with support, the enterprise image and the license key.">
+<meta name="description" content="Isolated hosted instances, self-hosting with support, and what is not open source.">
 <link rel="canonical" href="https://docs.tokencontroller.com/self-hosting/enterprise">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='2' y='2' width='24' height='24' rx='7' fill='%230F3D33'/%3E%3Crect x='8' y='10' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='15.4' width='12' height='2.6' rx='1.3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,24 +227,13 @@ td:first-child{font-weight:600;white-space:nowrap}
 
 
     <h2 id="hosted">Hosted for you</h2>
-    <p>An isolated hosted instance in the region you choose, with OIDC and SCIM, an audit log, telemetry passthrough to your own collector, cloud bill connectors on request, and a support SLA. Nothing is shared with other organizations: the instance has its own service and its own Postgres database. It runs the enterprise image with your license key.</p>
+    <p>An isolated hosted instance in the region you choose, with OIDC and SCIM, an audit log, telemetry passthrough to your own collector, cloud bill connectors on request, and a support SLA. Nothing is shared with other organizations: the instance has its own service and its own database.</p>
 
     <h2 id="self">Self-hosted with support</h2>
-    <p>A self-hosted instance with a support contract is an Enterprise plan instance. We send you a pull token for the enterprise image and your license key. In your <a href="/self-hosting/docker">compose.yaml</a>, swap the image for <code>ghcr.io/tokencontroller/tokencontroller-enterprise</code> and set <code>TC_LICENSE_KEY</code>. Everything else stays the same. <a href="https://www.linkedin.com/in/jancbeck/">Talk to us</a>.</p>
+    <p>A self-hosted instance with a support contract is an Enterprise plan instance. You keep your own Postgres and your own region; we send you what you need to switch the features on. <a href="https://www.linkedin.com/in/jancbeck/">Talk to us</a>.</p>
 
-    <h2 id="image">The enterprise image</h2>
-    <p>The Enterprise plan features ship in the enterprise image: the open-source service plus closed-source Enterprise code. Without a license key it behaves exactly like the open-source image, so you can switch to it at any time.</p>
-
-    <h2 id="license">The license key</h2>
-    <p>A license key is a signed file that names your organization, your member limit and your support end date. The instance checks the signature itself and never calls us, so it works without internet access.</p>
-    <table>
-      <thead><tr><th>When</th><th>What happens</th></tr></thead>
-      <tbody>
-        <tr><td>30 days before the support end date</td><td>Controllers see a renewal notice in the web app.</td></tr>
-        <tr><td>After the support end date</td><td>Enterprise plan features keep working for a 30-day grace period.</td></tr>
-        <tr><td>After the grace period</td><td>Enterprise plan features switch off. Your data stays: people sign in with magic link, Google, GitHub or Microsoft, and every report and export keeps working.</td></tr>
-      </tbody>
-    </table>
+    <h2 id="features">What is not open source</h2>
+    <p>The Enterprise plan features are the one part of Token Controller that is not open source. They sit on top of the open-source service, and nothing in the open-source version depends on them. If an Enterprise plan ends, your data stays: people sign in with magic link, Google, GitHub or Microsoft, and every report and export keeps working. See <a href="/reference/open-source">Open source and licenses</a>.</p>
 
 
     <div class="foot">
@@ -258,8 +247,7 @@ td:first-child{font-weight:600;white-space:nowrap}
     <ul>
       <li><a href="#hosted">Hosted for you</a></li>
       <li><a href="#self">Self-hosted with support</a></li>
-      <li><a href="#image">The enterprise image</a></li>
-      <li><a href="#license">The license key</a></li>
+      <li><a href="#features">What is not open source</a></li>
     </ul>
   </nav>
 </div>

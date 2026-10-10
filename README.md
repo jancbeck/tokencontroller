@@ -19,12 +19,4 @@ Rust code is one Cargo workspace (`Cargo.toml` at the root). TypeScript code is 
 
 ## Open core
 
-Everything here is open source. The service has one plug-in point through which the Enterprise plan features, kept in a private repo, are added to build the enterprise image. The private repo depends on this one, never the other way round. What that means for customers is on the docs pages [Enterprise](https://docs.tokencontroller.com/self-hosting/enterprise) and [Open source and licenses](https://docs.tokencontroller.com/reference/open-source).
-
-## Docs
-
-- `apps/docs/pages/`: one HTML file per page body. `apps/docs/pages.txt` lists every page with its title, group and description.
-- `apps/docs/glossary.md`: what every term means. The glossary page is built from it, and the rest of the docs use only these words.
-- `apps/docs/site/`: the built site. `apps/docs/site/index.html` holds the shared head and sidebar.
-
-Run `sh apps/docs/build.sh` after any change, and `sh apps/docs/serve.sh` to preview at http://localhost:8898. Cloudflare deploys `apps/docs/` to docs.tokencontroller.com on every push to main (`apps/docs/wrangler.jsonc`).
+Everything here is open source. The Enterprise plan features are kept in a private repo that builds on this one; this repo never depends on it. What that means for customers is on the docs pages [Enterprise plan instances](https://docs.tokencontroller.com/self-hosting/enterprise) and [Open source and licenses](https://docs.tokencontroller.com/reference/open-source).
