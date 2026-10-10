@@ -17,6 +17,10 @@ The docs at [docs.tokencontroller.com](https://docs.tokencontroller.com) say exa
 
 Rust code is one Cargo workspace (`Cargo.toml` at the root). TypeScript code is one pnpm workspace (`pnpm-workspace.yaml` at the root). The `Dockerfile` for the service image sits at the root too. Only `apps/docs/` exists so far; the rest arrives with the code.
 
+## Open core
+
+Everything here is open source. The service has one plug-in point through which the Enterprise plan features, kept in a private repo, are added to build the enterprise image. The private repo depends on this one, never the other way round. What that means for customers is on the docs pages [Enterprise](https://docs.tokencontroller.com/self-hosting/enterprise) and [Open source and licenses](https://docs.tokencontroller.com/reference/open-source).
+
 ## Docs
 
 - `apps/docs/pages/`: one HTML file per page body. `apps/docs/pages.txt` lists every page with its title, group and description.
