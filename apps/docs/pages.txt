@@ -50,7 +50,7 @@ integrations/anthropic-enterprise|Anthropic Enterprise|Integrations|Bills from A
 integrations/anthropic-console|Anthropic Console|Integrations|Bills from Anthropic's Usage and Cost Admin API.|pages/integrations_anthropic-console.html
 integrations/openai|OpenAI|Integrations|Bills from OpenAI's Costs API.|pages/integrations_openai.html
 integrations/csv|CSV bills|Integrations|Upload any bill as CSV.|pages/integrations_csv.html
-integrations/sign-in|Sign-in providers|Integrations|Magic link, Google, GitHub, Microsoft, and OIDC and SCIM.|pages/integrations_sign-in.html
+integrations/sign-in|Sign-in providers|Integrations|Magic link for everyone, OIDC and SCIM on the Enterprise plan.|pages/integrations_sign-in.html
 reference/pricing-tables|Price tables|Reference|Published prices per model, versioned and kept with each closed period.|pages/reference_pricing-tables.html
 glossary|Glossary|Reference|Every term in Token Controller and what it means.|pages/glossary.html
 self-hosting|Self-hosting|Self-hosting|What a self-hosted Token Controller runs, and how to start.|pages/self-hosting.html
