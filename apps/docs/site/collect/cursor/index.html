@@ -171,7 +171,7 @@ td:first-child{font-weight:600;white-space:nowrap}
       <li><a href="/report/cost-sheet">The cost sheet</a></li>
       <li><a href="/report/reports">Reading reports</a></li>
       <li><a href="/report/token-budget-vs-actual">Token budget vs actual</a></li>
-      <li><a href="/report/agent-harness-skills">Agent harness and skill reports</a></li>
+      <li><a href="/report/agent-harness">Agent harness reports</a></li>
       <li><a href="/report/outliers">Outliers</a></li>
       <li><a href="/report/exports">Exports</a></li>
       <li><a href="/report/reporting-api">Reporting API</a></li>
@@ -227,7 +227,7 @@ td:first-child{font-weight:600;white-space:nowrap}
 
 
     <h2 id="setup">Set up</h2>
-    <p>Point the agent's OpenTelemetry exporter at <code>https://ingest.tokencontroller.com</code> and send your organization token as <code>Authorization: Bearer tc_org_…</code>. Find the token under <em>Settings</em> in the web app.</p>
+    <p>Point the agent's OpenTelemetry exporter at <code>https://app.tokencontroller.com/otlp</code> and send your organization token as <code>Authorization: Bearer tc_org_…</code>. Find the token under <em>Settings</em> in the web app.</p>
 
     <h2 id="sees">What it sends</h2>
     <p>Numbers and identifiers only: tokens, cost, model, person, repository, session and message IDs. See <a href="/collect/telemetry">Telemetry push</a> for what telemetry can and cannot see.</p>

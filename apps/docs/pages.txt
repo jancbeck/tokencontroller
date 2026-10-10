@@ -38,7 +38,7 @@ account/target|Attribution target|Account|The share of cost your organization ai
 report/cost-sheet|The cost sheet|Report|The locked account of one closed period, adding up to the bill.|pages/report_cost-sheet.html
 report/reports|Reading reports|Report|The reports, what they answer, and how summaries and status show in them.|pages/report_reports.html
 report/token-budget-vs-actual|Token budget vs actual|Report|Actual cost against token budget per person, ticket and project.|pages/report_token-budget-vs-actual.html
-report/agent-harness-skills|Agent harness and skill reports|Report|Cost by agent harness, agent name, skill, model, effort and speed.|pages/report_agent-harness-skills.html
+report/agent-harness|Agent harness reports|Report|Cost by agent harness, agent name, model, effort and speed.|pages/report_agent-harness.html
 report/outliers|Outliers|Report|Cost far from your organization's own baseline.|pages/report_outliers.html
 report/exports|Exports|Report|CSV from every table.|pages/report_exports.html
 report/reporting-api|Reporting API|Report|A read-only API for spreadsheets and BI tools.|pages/report_reporting-api.html
