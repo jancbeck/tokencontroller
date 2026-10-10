@@ -6,7 +6,7 @@
   "compatibility_date": "2026-09-01",
   "assets": {
     "directory": "./site",
-    "html_handling": "auto-trailing-slash",
+    "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
   "routes": [
